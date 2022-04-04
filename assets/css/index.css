@@ -1,0 +1,48 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
+}
+
+.header-background {
+  background-image: url("../../assets/images/background.jpg");
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.header__navbar_items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@font-face {
+  font-family: "Arial";
+  src: url(../fonts/Arial.ttf);
+}
+
+@font-face {
+  font-family: "Georgia";
+  src: url(../fonts/Arial.ttf);
+}
+/*# sourceMappingURL=index.css.map */

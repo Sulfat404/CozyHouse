@@ -1,4 +1,14 @@
 // fonts
+@font-face {
+  font-family: "Arial";
+  src: url("../../fonts/Arial.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Georgia";
+  src: url("../../fonts/Georgia.ttf") format("truetype");
+}
+
 @mixin TitleFont() {
     font-family: 'Georgia';
     font-style: normal;

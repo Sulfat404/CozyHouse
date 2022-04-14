@@ -1,0 +1,129 @@
+@font-face {
+  font-family: "Arial";
+  src: url(../fonts/Arial.ttf);
+}
+@font-face {
+  font-family: "Georgia";
+  src: url(../fonts/Arial.ttf);
+}
+*, html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  max-width: 1280px;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header-background {
+  background-image: url("../../images/background.jpg");
+}
+
+.header {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header__navbar_items {
+  display: flex;
+  flex-direction: row;
+}
+
+.logo__name {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 110%;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.06em;
+  color: #fff;
+  margin-bottom: 10px;
+  color: #F1CDB3;
+}
+
+.logo__description {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+  color: #CDCDCD;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+}
+
+.header__navbar_link {
+  margin-right: 35px;
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+  color: #CDCDCD;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  padding-right: 40px;
+  padding-left: 40px;
+  align-items: center;
+}
+
+.slogan__main {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 110%;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.06em;
+  color: #fff;
+  margin-bottom: 40px;
+  font-size: 44px;
+  line-height: 130%;
+}
+
+.slogan.sentence {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+  color: #CDCDCD;
+  margin-bottom: 40px;
+}
+
+.btn__make-friend {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #292929;
+}
+
+.main__img {
+  display: flex;
+}

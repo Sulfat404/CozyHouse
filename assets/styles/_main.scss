@@ -1,0 +1,225 @@
+@import "./mixins";
+
+// fonts
+@font-face {
+  font-family: "Arial";
+  src: url(../fonts/Arial.ttf);
+}
+
+@font-face {
+  font-family: "Georgia";
+  src: url(../fonts/Arial.ttf);
+}
+
+// variable
+$padding40: 40px;
+
+// mixins
+
+
+*,
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  max-width: 1280px;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.section {
+  padding-right: $padding40;
+  padding-left: $padding40;
+}
+
+.header-background {
+  background: url("../../images/background.jpg");
+  background-repeat: no-repeat;
+}
+
+.header {
+  padding-left: $padding40;
+  padding-right: $padding40;
+  padding-top: 60px;
+  padding-bottom: $padding40 * 2;
+  @include FlexRow();
+  justify-content: space-between;
+}
+
+.header__navbar_items {
+  @include FlexRow();
+
+}
+
+.logo__name {
+  @include TitleFont();
+  margin-bottom: 10px;
+  color: #F1CDB3;
+}
+
+.logo__description {
+  @include SentFont();
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+}
+
+.header__navbar_link {
+  margin-right: 35px;
+  @include SentFont();
+}
+
+.main {
+  @include FlexRow();
+  align-items: center;
+}
+
+.main__slogan {
+  margin-right: 40px;
+}
+
+.slogan__title {
+  @include TitleFont();
+  margin-bottom: 40px;
+  font-size: 44px;
+  line-height: 130%;
+}
+
+.slogan.sentence {
+  @include SentFont();
+  margin-bottom: 40px;
+
+}
+
+.btn__make-friend {
+  @include BtnFont();
+  @include BtnStyle-peach;
+}
+
+.main__img {
+  height: 708px;
+  display: flex;
+}
+
+// about
+
+.about {
+  @include FlexRow();
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  margin-bottom: 100px;
+}
+
+.about__slogan {
+  margin-left: 120px;
+  width: 35%;
+}
+
+.about__title {
+  @include TitleFont();
+  letter-spacing: 0.06em;
+  width: 65%;
+  color: #545454;
+}
+
+.about.sentence {
+  @include SentFont();
+  margin-top: 25px;
+  margin-bottom: 25px;
+  color: #4C4C4C
+}
+
+.pets {
+  @include FlexCol();
+  padding-top: 80px;
+  align-items: center;
+  justify-content: center;
+  background-color: #F6F6F6;
+}
+
+.pets_title {
+  @include TitleFont();
+  margin-bottom: 60px;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+.gallary {
+  @include FlexRow();
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.card {
+  @include CardStyle();
+  width: 270px;
+  height: 435px;
+  margin-right: 45px;
+  margin-left: 45px;
+}
+
+.card__title {
+  @include SentFont();
+
+  margin: 30px;
+  font-size: 20px;
+  line-height: 23px;
+  color: #545454;
+}
+
+.card__btn {
+  @include BtnFont();
+  @include BtnStyle-transparent();
+}
+
+.btn__pets {
+  @include BtnFont();
+  @include BtnStyle-peach;
+  margin-bottom: 100px;
+}
+
+// help
+.section.help {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .help__title {
+    @include TitleFont();
+    justify-content: center;
+    margin-top: 80px;
+    margin-bottom: 60px;
+    color: #545454;
+  }
+  .gallary__help {
+    margin-bottom: 100px;
+    margin-right: 0;
+    flex-wrap: wrap;
+    max-width: 1010px;
+    width: 100%;
+    .help__icon {
+      margin-top: 50px;
+      margin-right: 60px;
+      margin-left: 60px;
+    }
+  }
+}
+
+
+
+

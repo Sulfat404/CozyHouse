@@ -9,59 +9,13 @@
   src: url("../../fonts/Georgia.ttf") format("truetype");
 }
 
-@mixin TitleFont() {
-    font-family: 'Georgia';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 110%;
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.06em;
-    color: #fff;
-}
-    
-@mixin SentFont() {
-    font-family: 'Arial';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 160%;
-    color: #CDCDCD;
-}
-
-@mixin BtnFont() {
-    font-family: 'Georgia';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 130%;
-    letter-spacing: 0.06em;
-    color: #292929;
-}
-
-// Button styles
-@mixin BtnStyle-peach {
-    padding: 15px 45px;
-    background: #F1CDB3;
-    border-radius: 100px;
-    border: 0;
-}
-
-@mixin BtnStyle-transparent {
-    padding: 15px 45px;
-    background: none;
-    border: 2px solid #F1CDB3;
-    border-radius: 100px;
-}
-
 // card styles
 @mixin CardStyle() {
     background: #FAFAFA;
     border-radius: 9px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 

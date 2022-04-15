@@ -1,20 +1,82 @@
 @import "./mixins";
 
-// fonts
-@font-face {
-  font-family: "Arial";
-  src: url("../../fonts/Arial.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Georgia";
-  src: url("../../fonts/Georgia.ttf") format("truetype");
-}
-
 // variable
 $padding40: 40px;
 
-*, html {
+// classes for styles 
+.titleFont-white {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: #fff;
+}
+
+.titleFont-grey {
+  font-family: 'Georgia';
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+.sentFont-white {
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+  color: #ffffff;
+}
+.sentFont-grey {
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+  color: #CDCDCD;
+}
+
+.btnFont {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #292929;
+}
+
+.BtnStyle-peach {
+  padding: 15px 45px;
+  background: #F1CDB3;
+  border-radius: 100px;
+  border: 0;
+  cursor: pointer;
+  &:hover {
+    background: #FDDCC4;
+    transition-delay: 0.2s;
+  }
+}
+
+.BtnStyle-transparent {
+  padding: 15px 45px;
+  background: none;
+  border: 2px solid #F1CDB3;
+  border-radius: 100px;
+  cursor: pointer;
+  &:hover {
+    background: #FDDCC4;
+    transition-delay: 0.1s;
+  }
+}
+
+*,
+html {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -36,14 +98,17 @@ a {
   text-decoration: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 .section {
   padding-right: $padding40;
   padding-left: $padding40;
 }
 
 .header-background {
-  background: url("../../images/background.jpg");
-  background-repeat: no-repeat;
+  background: linear-gradient(to bottom right, #5B483A, 30%,#1b1a1a);
 }
 
 .header {
@@ -55,17 +120,14 @@ a {
 
 .header__navbar_items {
   @include FlexRow();
-
 }
 
 .logo__name {
-  @include TitleFont();
   margin-bottom: 10px;
   color: #F1CDB3;
 }
 
 .logo__description {
-  @include SentFont();
   font-size: 13px;
   line-height: 15px;
   letter-spacing: 0.1em;
@@ -73,34 +135,31 @@ a {
 
 .header__navbar_link {
   margin-right: 35px;
-  @include SentFont();
+  &:active {
+    color: #FAFAFA;
+    border-bottom: 4px solid #F1CDB3;
+  }
+  &:hover {
+    color: #FAFAFA;
+  }
 }
 
 .main {
   @include FlexRow();
   align-items: center;
-}
-
-.main__slogan {
-  margin-right: 40px;
-}
-
-.slogan__title {
-  @include TitleFont();
-  margin-bottom: 40px;
-  font-size: 44px;
-  line-height: 130%;
+  .main__slogan {
+    margin-right: 3vw;
+    .slogan__title {
+      width: 25vw;
+      margin-bottom: 40px;
+      font-size: 44px;
+      line-height: 130%;
+    }
+  }
 }
 
 .slogan.sentence {
-  @include SentFont();
   margin-bottom: 40px;
-
-}
-
-.btn__make-friend {
-  @include BtnFont();
-  @include BtnStyle-peach;
 }
 
 .main__img {
@@ -119,19 +178,17 @@ a {
 }
 
 .about__slogan {
-  margin-left: 120px;
+  margin-left: 7vw;
   width: 35%;
 }
 
 .about__title {
-  @include TitleFont();
   letter-spacing: 0.06em;
-  width: 65%;
+  width: 20vw;
   color: #545454;
 }
 
-.about.sentence {
-  @include SentFont();
+.about__sent {
   margin-top: 25px;
   margin-bottom: 25px;
   color: #4C4C4C
@@ -143,10 +200,11 @@ a {
   align-items: center;
   justify-content: center;
   background-color: #F6F6F6;
+  color: #545454;
 }
 
 .pets_title {
-  @include TitleFont();
+  text-align: center;
   margin-bottom: 60px;
   font-size: 35px;
   line-height: 130%;
@@ -158,34 +216,58 @@ a {
   @include FlexRow();
   justify-content: center;
   margin-bottom: 60px;
-}
-
-.card {
-  @include CardStyle();
-  width: 270px;
-  height: 435px;
-  margin-right: 45px;
-  margin-left: 45px;
-}
-
-.card__title {
-  @include SentFont();
-
-  margin: 30px;
-  font-size: 20px;
-  line-height: 23px;
-  color: #545454;
-}
-
-.card__btn {
-  @include BtnFont();
-  @include BtnStyle-transparent();
+  position: relative;
+  .card {
+    @include CardStyle();
+    width: 270px;
+    height: 435px;
+    margin-right: 45px;
+    margin-left: 45px;
+    cursor: pointer;
+    div {
+      margin-top: 5px;
+    }
+    &:hover {
+      box-shadow: 0 0 80px rgba(120, 117, 117, 0.5);
+    }
+    .card__title {
+      margin: 25px;
+      font-size: 20px;
+      line-height: 23px;
+      color: #545454;
+    }
+  }
 }
 
 .btn__pets {
-  @include BtnFont();
-  @include BtnStyle-peach;
   margin-bottom: 100px;
+}
+
+.wrapper__btn {
+  position: absolute;
+}
+.wrapper__btn.left {
+  left: -3%;
+  top: 50%;
+  transform: translate(0, -50%)
+}
+
+.wrapper__btn.right {
+  right: -3%;
+  top: 50%;
+  transform: translate(0, -50%)
+}
+
+.btn-circle {
+  width: 52px;
+  height: 52px;
+  border: 2px solid #F1CDB3;
+  box-sizing: border-box;
+  border-radius: 100px;
+  background: none;
+  &:hover {
+    background-color:#FDDCC4;
+  }
 }
 
 // help
@@ -193,8 +275,9 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   .help__title {
-    @include TitleFont();
+
     text-align: center;
     width: 35%;
     font-size: 35px;
@@ -203,21 +286,30 @@ a {
     margin-bottom: 60px;
     color: #545454;
   }
+
   .gallary__help {
     margin-bottom: 100px;
     margin-right: 0;
     flex-wrap: wrap;
-    max-width: 1010px;
+    max-width: 60vw;
     width: 100%;
+
     .help__icon {
       margin-top: 50px;
-      margin-right: 60px;
-      margin-left: 60px;
+      margin-right: 2.3vw;
+      margin-left: 2.3vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
     .help__sent {
-      @include SentFont();
       margin-top: 30px;
       color: #545454;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 115%;
+      letter-spacing: 0.06em;
     }
   }
 }
@@ -231,14 +323,16 @@ a {
   justify-content: center;
   align-items: center;
   background-color: #F6F6F6;
-  .donation__block{
+
+  .donation__block {
     margin-left: 30px;
     display: flex;
     flex-direction: column;
   }
 }
+
 .donation__title {
-  @include TitleFont();
+
   font-size: 35px;
   line-height: 130%;
   max-width: 300px;
@@ -266,9 +360,11 @@ a {
   padding: 10px 15px;
   background: #F1CDB3;
   border-radius: 9px;
+
   .wrapper__img {
     display: flex;
   }
+
   .card_sent {
     margin-left: 15px;
     font-family: 'Georgia';
@@ -286,7 +382,7 @@ a {
 }
 
 .descrip {
-  @include SentFont();
+
   font-style: italic;
   font-size: 12px;
   line-height: 18px;
@@ -294,11 +390,9 @@ a {
 
 // footer
 .footer-background {
-  background: url("../../images/background.jpg");
-  background-repeat: no-repeat;
-  max-height: 100%;
-  height: 350px;
+  background: linear-gradient(to right, #5B483A,#211F20);
 }
+
 .footer {
   height: 100%;
   display: flex;
@@ -312,17 +406,15 @@ a {
   width: 30%;
   max-width: 100%;
 }
+
 .footer__block:nth-child(2) {
   margin-left: 3%;
   margin-right: 5%;
 }
+
 .footer__block:last-child {
   display: flex;
   align-self: flex-end;
-}
-
-.footer__title {
-  @include TitleFont();
 }
 
 .footer__svg-sent {
@@ -331,14 +423,14 @@ a {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  .footer__sent {
-    width: 70%;
-    margin-left: 20px;
-    font-family: 'Georgia';
-    font-size: 20px;
-    line-height: 115%;
-    letter-spacing: 0.06em;
-    color: #F1CDB3;
-  }
 }
 
+.footer__sent {
+  width: 18vw;
+  margin-left: 1vw;
+  font-family: 'Georgia';
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #F1CDB3;
+}

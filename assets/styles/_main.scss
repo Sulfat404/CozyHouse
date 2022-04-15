@@ -15,6 +15,17 @@ $padding40: 40px;
   color: #fff;
 }
 
+.titleFont-peach {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: #F1CDB3;
+}
+
 .titleFont-grey {
   font-family: 'Georgia';
   font-weight: 400;
@@ -39,6 +50,15 @@ $padding40: 40px;
   font-size: 15px;
   line-height: 160%;
   color: #CDCDCD;
+}
+
+.sentFont-darkgrey {
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+  color: #545454;
 }
 
 .btnFont {
@@ -80,6 +100,7 @@ html {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -116,6 +137,7 @@ button {
   padding-bottom: $padding40 * 2;
   @include FlexRow();
   justify-content: space-between;
+  align-items: center
 }
 
 .header__navbar_items {
@@ -124,7 +146,6 @@ button {
 
 .logo__name {
   margin-bottom: 10px;
-  color: #F1CDB3;
 }
 
 .logo__description {
@@ -148,6 +169,7 @@ button {
   @include FlexRow();
   align-items: center;
   .main__slogan {
+    margin-bottom: 5vh;
     margin-right: 3vw;
     .slogan__title {
       width: 25vw;
@@ -221,14 +243,14 @@ button {
     @include CardStyle();
     width: 270px;
     height: 435px;
-    margin-right: 45px;
-    margin-left: 45px;
+    margin-right: 3vw;
+    margin-left: 3vw;
     cursor: pointer;
     div {
       margin-top: 5px;
     }
     &:hover {
-      box-shadow: 0 0 80px rgba(120, 117, 117, 0.5);
+      box-shadow: 0 0 20px rgba(120, 117, 117, 0.5);
     }
     .card__title {
       margin: 25px;
@@ -269,6 +291,9 @@ button {
     background-color:#FDDCC4;
   }
 }
+.right-btn-circle_pets {
+  margin: 10px;
+}
 
 // help
 .section.help {
@@ -277,7 +302,6 @@ button {
   align-items: center;
 
   .help__title {
-
     text-align: center;
     width: 35%;
     font-size: 35px;
@@ -371,7 +395,9 @@ button {
     font-size: 20px;
     line-height: 115%;
     letter-spacing: 0.06em;
-    color: #545454;
+        a {
+      color: #545454;
+    }
   }
 }
 
@@ -382,7 +408,6 @@ button {
 }
 
 .descrip {
-
   font-style: italic;
   font-size: 12px;
   line-height: 18px;
@@ -433,4 +458,58 @@ button {
   line-height: 115%;
   letter-spacing: 0.06em;
   color: #F1CDB3;
+}
+
+
+// pets
+.header__navbar_link.sentFont-darkgrey:hover {
+  color: #000000;
+}
+.header_pets {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.section__pets {
+  background-color: #F6F6F6;
+}
+
+.wrapper__gallary {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 1100px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+}
+
+.gallary.gallary_pets {
+  // количество рядов (их 2)
+  height: 950px; 
+  width: 1200px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0;
+}
+
+.pets_title_pets {
+  padding-top: 10vh;
+}
+
+.card.card_pets {
+  margin: 15px;
+}
+.wrapper_buttons {
+  width: 340px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-self: center;
 }

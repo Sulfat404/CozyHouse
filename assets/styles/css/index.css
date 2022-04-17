@@ -387,6 +387,10 @@ button {
   margin: 10px;
 }
 
+.btn-circle.btn__circle_peach {
+  background-color: #F1CDB3;
+}
+
 .section.help {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -611,6 +615,10 @@ button {
   color: #F1CDB3;
 }
 
+.footer__sent .footer__sent_link {
+  color: #F1CDB3;
+}
+
 .header__navbar_link.sentFont-darkgrey:hover {
   color: #000000;
 }
@@ -618,6 +626,7 @@ button {
 .header_pets {
   padding-top: 30px;
   padding-bottom: 30px;
+  padding-left: 40px;
 }
 
 .section__pets {

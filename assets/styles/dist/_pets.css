@@ -1,0 +1,60 @@
+@font-face {
+  font-family: "Arial";
+  src: url("../../fonts/Arial.ttf");
+}
+@font-face {
+  font-family: "Georgia";
+  src: url("../../fonts/Georgia.ttf");
+}
+.navbar__link.sentFont-darkgrey:hover {
+  color: #000000;
+}
+
+.header_pets {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 40px;
+}
+
+.section__pets {
+  background-color: #F6F6F6;
+}
+
+.wrapper__gallary {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 1100px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.gallary.gallary_pets {
+  height: 950px;
+  width: 1200px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0;
+}
+
+.pets_title_pets {
+  padding-top: 10vh;
+}
+
+.card.card_pets {
+  margin: 15px;
+}
+
+.wrapper_buttons {
+  width: 340px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-self: center;
+}

@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Arial";
+  font-weight: 100;
+  src: url("../../fonts/Arial.ttf");
+}
+@font-face {
+  font-family: "Georgia";
+  src: url("../../fonts/Georgia.ttf");
+}

@@ -1,0 +1,146 @@
+.title {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+}
+
+.text {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 100;
+  font-size: 15px;
+  line-height: 160%;
+  color: #ffffff;
+  letter-spacing: 0.06em;
+}
+
+.text.text_grey {
+  color: #4C4C4C;
+}
+
+.subtitle {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+.label {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  align-items: center;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+.link {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+  color: #CDCDCD;
+  letter-spacing: 0.06em;
+}
+
+.info {
+  font-family: "Arial";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #B2B2B2;
+}
+
+.btn__style-peach {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #292929;
+  padding: 15px 45px;
+  background: #F1CDB3;
+  border-radius: 100px;
+  border: 0;
+  cursor: pointer;
+}
+.btn__style-peach:hover {
+  background: #FDDCC4;
+  transition-delay: 0.2s;
+}
+
+.btn__style-transparent {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #292929;
+  padding: 15px 45px;
+  background: none;
+  border: 2px solid #F1CDB3;
+  border-radius: 100px;
+  cursor: pointer;
+}
+.btn__style-transparent:hover {
+  background: #FDDCC4;
+  transition-delay: 0.1s;
+}
+
+.btn-circle {
+  width: 52px;
+  height: 52px;
+  border: 2px solid #F1CDB3;
+  box-sizing: border-box;
+  border-radius: 100px;
+  background: none;
+}
+.btn-circle:hover {
+  background-color: #FDDCC4;
+}
+
+*,
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  max-width: 1280px;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.section {
+  padding-right: 40px;
+  padding-left: 40px;
+}

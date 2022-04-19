@@ -287,6 +287,17 @@ button {
   src: url("../../fonts/Georgia.ttf");
 }
 
+@font-face {
+  font-family: "Arial";
+  font-weight: 100;
+  src: url("../../fonts/Arial.ttf");
+}
+
+@font-face {
+  font-family: "Georgia";
+  src: url("../../fonts/Georgia.ttf");
+}
+
 .header-background {
   background: -webkit-gradient(linear, left top, right bottom, from(#5B483A), color-stop(30%), to(#1b1a1a));
   background: linear-gradient(to bottom right, #5B483A, 30%, #1b1a1a);
@@ -294,7 +305,6 @@ button {
 
 .header {
   padding-top: 60px;
-  padding-bottom: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -48,3 +48,9 @@
 .card__pPets {
   margin: 20px;
 }
+
+@media screen and (max-width: 992px) {
+  .gallary__wrapper .gallary__items {
+    width: 620px;
+  }
+}

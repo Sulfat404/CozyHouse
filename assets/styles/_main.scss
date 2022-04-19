@@ -8,6 +8,7 @@
 
 .header {
   padding-top: 60px;
+  padding-bottom: 100px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -24,9 +25,14 @@
   color: #F1CDB3;
 }
 
-.navbar__link {
+.navbar__item {
   margin-right: 35px;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
+
 
 
 .main {
@@ -52,7 +58,7 @@
   color: #CDCDCD;
 }
 
-.main__img {
+.main__wrapper-img {
   height: 708px;
   display: flex;
 }
@@ -73,7 +79,7 @@
 }
 
 .about__title {
-  width: 20vw;
+  width: 70%;
   color: #545454;
 }
 
@@ -91,22 +97,23 @@
   justify-content: center;
   height: 512px;
   position: relative;
-
-  .gallary__items_pMain {
-    // количество рядов (их 1)
-    // height: 950px;
-    width: 1080px;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-
-    .card_pMain {
-      margin-right: 45px;
-      margin-left: 45px;
-    }
-  }
 }
+
+.gallary__items_pMain {
+  // количество рядов (их 1)
+  width: 1080px;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.card_pMain {
+  margin-right: 45px;
+  margin-left: 45px;
+}
+
+
 
 .wrapper__btn-circle {
   position: absolute;
@@ -146,14 +153,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
 
-  .help__title {
-    text-align: center;
-    width: 35%;
-    margin-top: 80px;
-    margin-bottom: 60px;
-    color: #545454;
-  }
+.help__title {
+  text-align: center;
+  width: 35%;
+  margin-top: 80px;
+  margin-bottom: 60px;
+  color: #545454;
 }
 
 .gallary__help {
@@ -167,8 +174,7 @@
 
   .icon__block {
     margin-top: 50px;
-    margin-right: 2.3vw;
-    margin-left: 2.3vw;
+    width: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -180,6 +186,8 @@
     color: #545454;
   }
 }
+
+
 
 // donation
 .section__donation {
@@ -288,4 +296,126 @@
       color: #F1CDB3;
     }
   }
+}
+
+@media screen and (max-width: 992px) {
+  .section {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .header {
+    padding-top: 30px;
+  }
+
+  .navbar__item {
+    margin-right: 25px;
+  }
+
+  .main {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .main__slogan {
+      width: 60vw;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .slogan__title {
+        width: 60%;
+      }
+    }
+
+    .btn__form {
+      display: flex;
+      align-self: center;
+    }
+  }
+
+  .main__wrapper-img {
+    height: auto;
+
+    .main__img {
+      width: 70vw;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  // about
+  .section__about {
+    flex-direction: column-reverse;
+
+    .about__slogan {
+      width: 55vw;
+
+      .about__title {
+        width: 50vw;
+
+      }
+    }
+  }
+
+  .about__wrapper-img {
+    margin-top: 60px;
+    margin-bottom: 10px;
+  }
+
+  .card_pMain {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .gallary__wrapper_pMain {
+    width: 708px;
+  }
+
+  .gallary__items_pMain {
+    width: 620px;
+  }
+
+  .gallary__help {
+    max-width: 80vw;
+    width: 100%;
+
+    .icon__block {
+      width: 200px;
+    }
+  }
+
+  .help__title {
+    width: 50%;
+  }
+  
+  // donation
+  .section__donation {
+    flex-direction: column-reverse;
+    .donation__block {
+      margin-bottom: 60px;
+    }
+  }
+  .footer__section .footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    .footer__column {
+      flex-basis: 40%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .footer__column:first-child {
+      margin-right: 5vw;
+    }
+    .footer__column:last-child {
+      flex-basis: 50%;
+    }
+  }
+  .footer-svg__block {
+    margin-bottom: 30px;
+    .footer-svg__subtitle {
+      width: 38vw;
+    }
+  }
+
 }

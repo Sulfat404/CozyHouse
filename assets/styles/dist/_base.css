@@ -139,6 +139,7 @@
 }
 .btn__style-transparent:hover {
   background: #FDDCC4;
+  border: 2px solid #FDDCC4;
   transition-delay: 0.1s;
 }
 
@@ -166,6 +167,8 @@
 }
 .btn-circle:hover {
   background-color: #FDDCC4;
+  border: 2px solid #FDDCC4;
+  transition-delay: 0.1s;
 }
 
 .btn-circle_number {
@@ -181,6 +184,7 @@
 }
 .btn-circle_disabled:hover {
   background-color: #F6F6F6;
+  border: 2px solid #CDCDCD;
 }
 
 .card {

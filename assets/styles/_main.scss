@@ -83,6 +83,47 @@
 }
 
 // pets
+
+.gallary__wrapper_pMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 512px;
+  position: relative;
+
+  .gallary__items_pMain {
+    // количество рядов (их 1)
+    // height: 950px;
+    width: 1080px;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    .card_pMain {
+      margin-right: 45px;
+      margin-left: 45px;
+    }
+  }
+}
+
+.wrapper__btn-circle {
+  position: absolute;
+}
+
+.wrapper__btn-circle-left {
+  left: -5%;
+  bottom: 50%;
+  transform: translate(50%, 0);
+}
+
+.wrapper__btn-circle-right {
+  right: -5%;
+  bottom: 50%;
+  transform: translate(-50%, 0);
+}
+
 .section__pets {
   display: flex;
   flex-direction: column;
@@ -98,35 +139,6 @@
     margin-bottom: 60px;
     color: #545454;
   }
-
-  .pets__gallary {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 60px;
-    position: relative;
-  }
-}
-
-.card_pMain {
-  margin-right: 45px;
-  margin-left: 45px;
-}
-
-.wrapper__btn-circle {
-  position: absolute;
-}
-
-.wrapper__btn-circle-left {
-  left: 0;
-  bottom: 50%;
-  transform: translate(50%, 0);
-}
-
-.wrapper__btn-circle-right {
-  right: 0;
-  bottom: 50%;
-  transform: translate(-50%, 0);
 }
 
 // help
@@ -150,7 +162,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 65vw;
+  max-width: 60vw;
   width: 100%;
 
   .icon__block {

@@ -27,33 +27,21 @@
 
 .navbar__link {
   margin-right: 35px;
-
-  &:active {
-    color: #FAFAFA;
-    border-bottom: 3px solid #F1CDB3;
-  }
-
-  &:hover {
-    color: #FAFAFA;
-  }
 }
 
-.navbar__link_active {
-  color: #FAFAFA;
-  border-bottom: 3px solid #F1CDB3;
-}
 
 .main {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
 
   .main__slogan {
     margin-bottom: 5vh;
     margin-right: 3vw;
 
     .slogan__title {
-      width: 25vw;
+      // width: 25vw;
       margin-bottom: 40px;
       color: #FFFFFF;
     }
@@ -71,7 +59,7 @@
 }
 
 // about
-.about {
+.section__about {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -95,84 +83,49 @@
   margin-bottom: 25px;
 }
 
+// pets
 .section__pets {
   display: flex;
   flex-direction: column;
   padding-top: 80px;
+  padding-bottom: 100px;
   align-items: center;
   justify-content: center;
   background-color: #F6F6F6;
-}
-
-.pets__title {
-  text-align: center;
-  margin-bottom: 60px;
-  color: #545454;
-}
-
-.pets__gallary {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-bottom: 60px;
   position: relative;
-
-  .card {
+  .pets__title {
+    text-align: center;
+    margin-bottom: 60px;
+    color: #545454;
+  }
+  .pets__gallary {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    width: 270px;
-    height: 435px;
-    margin-right: 3vw;
-    margin-left: 3vw;
-    cursor: pointer;
-    border-radius: 9px;
-    background-color: #FAFAFA;
-
-    div {
-      margin-top: 3px;
-    }
-
-    &:hover {
-      box-shadow: 0 0 20px rgba(120, 117, 117, 0.5);
-    }
-
-    .card__subtitle {
-      margin: 25px;
-      font-size: 20px;
-      line-height: 23px;
-      color: #545454;
-    }
+    margin-bottom: 60px;
+    position: relative;
   }
 }
 
-.btn__pets {
-  margin-bottom: 100px;
+.card_pMain {
+  margin-right: 45px;
+  margin-left: 45px;
 }
 
-.wrapper__btn {
+.wrapper__btn-circle {
   position: absolute;
 }
 
-.wrapper__btn.left {
-  left: -3%;
-  top: 50%;
-  transform: translate(0, -50%)
+.wrapper__btn-circle-left {
+  left: 0;
+  bottom: 50%;
+  transform: translate(50%, 0);
 }
 
-.wrapper__btn.right {
-  right: -3%;
-  top: 50%;
-  transform: translate(0, -50%)
-}
-
-.right-btn-circle_pets {
-  margin: 10px;
-}
-
-.btn-circle.btn__circle_peach {
-  background-color: #F1CDB3;
+.wrapper__btn-circle-right {
+  right: 0;
+  bottom: 50%;
+  transform: translate(-50%, 0);
 }
 
 // help
@@ -196,7 +149,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 70vw;
+  max-width: 65vw;
   width: 100%;
 
   .icon__block {
@@ -209,7 +162,7 @@
     align-items: center;
   }
 
-  .help__subtitle {
+  .icon__subtitle {
     margin-top: 30px;
     color: #545454;
   }
@@ -300,7 +253,7 @@
     margin-left: 3%;
     margin-right: 5%;
   }
-  
+
   .footer__title {
     color: #ffffff;
   }
@@ -317,10 +270,9 @@
     width: 18vw;
     margin-left: 1vw;
     color: #F1CDB3;
-  
+
     .footer-svg__link {
       color: #F1CDB3;
     }
   }
 }
-

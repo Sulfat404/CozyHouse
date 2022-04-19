@@ -1,40 +1,43 @@
 @font-face {
   font-family: "Arial";
+  font-weight: 100;
   src: url("../../fonts/Arial.ttf");
 }
 @font-face {
   font-family: "Georgia";
   src: url("../../fonts/Georgia.ttf");
 }
-.navbar__link.sentFont-darkgrey:hover {
-  color: #000000;
-}
-
 .header_pets {
   padding-top: 30px;
   padding-bottom: 30px;
   padding-left: 40px;
 }
 
-.section__pets {
+.section__gallary {
   background-color: #F6F6F6;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.section__gallary .gallary__title {
+  padding-top: 6vh;
+  padding-bottom: 3vh;
+  text-align: center;
+  color: #545454;
 }
 
-.wrapper__gallary {
+.gallary__wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
-  height: 1100px;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  justify-content: center;
+  height: 1112px;
 }
-
-.gallary.gallary_pets {
+.gallary__wrapper .gallary__items {
   height: 950px;
-  width: 1200px;
+  width: 1240px;
   overflow-y: hidden;
   overflow-x: hidden;
+  display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: flex-start;
@@ -42,19 +45,6 @@
   margin: 0;
 }
 
-.pets_title_pets {
-  padding-top: 10vh;
-}
-
-.card.card_pets {
-  margin: 15px;
-}
-
-.wrapper_buttons {
-  width: 340px;
-  height: 60px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  justify-self: center;
+.card__pPets {
+  margin: 20px;
 }

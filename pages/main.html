@@ -21,7 +21,7 @@
             <nav class="header__navbar">
                 <ul class="navbar__list">
                     <li class="navbar__item"><a href="#" class="navbar__link navbar__link_active link">About the shelter</a></li>
-                    <li class="navbar__item"><a href="./pets.html" class="navbar__link link">Our pets</a></li>
+                    <li class="navbar__item"><a href="../pages/pets.html" class="navbar__link link">Our pets</a></li>
                     <li class="navbar__item"><a href="#help" class="navbar__link link">Help the shelter</a></li>
                     <li class="navbar__item"><a href="#contacts" class="navbar__link link">Contacts</a></li>
                 </ul>
@@ -32,7 +32,7 @@
                 <h1 class="slogan__title title">Not only people need a house</h1>
                 <div class="text slogan__text">We offer to give a chance to a little and nice puppy with an
                     extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</div>
-                <form action="./pets.html" target="_blank">
+                <form action="../pages/pets.html" target="_blank">
                     <button class="btn__make-friend btn__style-peach">Make a friend</button>
                 </form>
             </div>
@@ -41,7 +41,7 @@
             </div>
         </main>
     </section>
-    <section class="section about">
+    <section class="section__about">
         <div class="about__img">
             <img src="../assets/images/about-pets.png" alt="about-pets">
         </div>
@@ -59,40 +59,84 @@
     </section>
     <section class="section section__pets">
         <h2 class="pets__title title">Our friends who<br>are looking for a house</h2>
+        <div class="wrapper__btn-circle wrapper__btn-circle-left">
+            <button class="btn-circle btn-circle__left">
+                <img src="../assets/images/leftArrow.png" alt="leftArrow">
+            </button>
+        </div>
+        <div class="wrapper__btn-circle wrapper__btn-circle-right">
+            <button class="btn-circle btn-circle__right">
+                <img src="../assets/images/rightArrow.png" alt="rightArrow">
+            </button>
+        </div>
         <div class="gallary pets__gallary">
-            <div class="wrapper__btn left">
-                <button class="btn-circle left">
-                    <img src="../assets/images/leftArrow.png" alt="leftArrow">
-                </button>
-            </div>
-            <div class="wrapper__btn right">
-                <button class="btn-circle right">
-                    <img src="../assets/images/rightArrow.png" alt="rightArrow">
-                </button>
-            </div>
-            <div class="card">
+            <div class="card card_pMain">
                 <div>
                     <img src="../assets/images/pets-katrine.jpg" alt="pets-katrine">
                 </div>
-                <p class="title card__subtitle">Katrine</p>
+                <p class="subtitle card__subtitle">Katrine</p>
                 <button class="btn__style-transparent">Learn more</button>
             </div>
-            <div class="card">
+            <div class="card card_pMain">
                 <div>
                     <img src="../assets/images/pets-katrine.jpg" alt="pets-katrine">
                 </div>
-                <p class="title card__subtitle">Katrine</p>
+                <p class="subtitle card__subtitle">Katrine</p>
                 <button class="btn__style-transparent">Learn more</button>
             </div>
-            <div class="card">
+            <div class="card card_pMain">
                 <div>
                     <img src="../assets/images/pets-katrine.jpg" alt="pets-katrine">
                 </div>
-                <p class="title card__subtitle">Katrine</p>
+                <p class="subtitle card__subtitle">Katrine</p>
+                <button class="btn__style-transparent">Learn more</button>
+            </div>
+            <div class="card card_pMain">
+                <div>
+                    <img src="../assets/images/pets-katrine.jpg" alt="pets-katrine">
+                </div>
+                <p class="subtitle card__subtitle">Katrine</p>
+                <button class="btn__style-transparent">Learn more</button>
+            </div>
+            <div class="card card_pMain">
+                <div>
+                    <img src="../assets/images/pets-katrine.jpg" alt="pets-katrine">
+                </div>
+                <p class="subtitle card__subtitle">Katrine</p>
+                <button class="btn__style-transparent">Learn more</button>
+            </div>
+            <div class="card card_pMain">
+                <div>
+                    <img src="../assets/images/pets-katrine.jpg" alt="pets-katrine">
+                </div>
+                <p class="subtitle card__subtitle">Katrine</p>
+                <button class="btn__style-transparent">Learn more</button>
+            </div>
+            <div class="card card_pMain">
+                <div>
+                    <img src="../assets/images/pets-katrine.jpg" alt="pets-katrine">
+                </div>
+                <p class="subtitle card__subtitle">Katrine</p>
+                <button class="btn__style-transparent">Learn more</button>
+            </div>
+            <div class="card card_pMain">
+                <div>
+                    <img src="../assets/images/pets-katrine.jpg" alt="pets-katrine">
+                </div>
+                <p class="subtitle card__subtitle">Katrine</p>
+                <button class="btn__style-transparent">Learn more</button>
+            </div>
+            <div class="card card_pMain">
+                <div>
+                    <img src="../assets/images/pets-katrine.jpg" alt="pets-katrine">
+                </div>
+                <p class="subtitle card__subtitle">Katrine</p>
                 <button class="btn__style-transparent">Learn more</button>
             </div>
         </div>
-        <button class="btn__pets btn__style-peach">Get to know the rest</button>
+        <form action="../pages/pets.html" target="_blank">
+            <button class="btn__pets btn__style-peach">Get to know the rest</button>
+        </form>
     </section>
     <section class="section section__help">
         <h2 id="help" class="help__title title">How you can help our shelter</h2>
@@ -101,55 +145,55 @@
                 <svg width="60" height="60" class="icon">
                     <use xlink:href="../assets/icons/svgSprie.svg#Petfood"></use>
                 </svg>
-                <p class="help__subtitle subtitle">Pet food</p>
+                <p class="icon__subtitle subtitle">Pet food</p>
             </div>
             <div class="icon__block">
                 <svg width="60" height="60" class="icon">
                     <use xlink:href="../assets/icons/svgSprie.svg#icon-transportation"></use>
                 </svg>
-                <p class="help__subtitle subtitle">Transportation</p>
+                <p class="icon__subtitle subtitle">Transportation</p>
             </div>
             <div class="icon__block">
                 <svg width="60" height="60" class="icon">
                     <use xlink:href="../assets/icons/svgSprie.svg#toys"></use>
                 </svg>
-                <p class="help__subtitle subtitle">Toys</p>
+                <p class="icon__subtitle subtitle">Toys</p>
             </div>
             <div class="icon__block">
                 <svg width="60" height="60" class="icon">
                     <use xlink:href="../assets/icons/svgSprie.svg#phone"></use>
                 </svg>
-                <p class="help__subtitle subtitle">Bowls and cups</p>
+                <p class="icon__subtitle subtitle">Bowls and cups</p>
             </div>
             <div class="icon__block">
                 <svg width="60" height="60" class="icon">
                     <use xlink:href="../assets/icons/svgSprie.svg#shampoos"></use>
                 </svg>
-                <p class="help__subtitle subtitle">Shampoos</p>
+                <p class="icon__subtitle subtitle">Shampoos</p>
             </div>
             <div class="icon__block">
                 <svg width="60" height="60" class="icon">
                     <use xlink:href="../assets/icons/svgSprie.svg#vitamins"></use>
                 </svg>
-                <p class="help__subtitle subtitle">Vitamins</p>
+                <p class="icon__subtitle subtitle">Vitamins</p>
             </div>
             <div class="icon__block">
                 <svg width="60" height="60" class="icon">
                     <use xlink:href="../assets/icons/svgSprie.svg#medicines"></use>
                 </svg>
-                <p class="help__subtitle subtitle">Medicines</p>
+                <p class="icon__subtitle subtitle">Medicines</p>
             </div>
             <div class="icon__block">
                 <svg width="60" height="60" class="icon">
                     <use xlink:href="../assets/icons/svgSprie.svg#bowls-and-cups"></use>
                 </svg>
-                <p class="help__subtitle subtitle">Collars / leashes</p>
+                <p class="icon__subtitle subtitle">Collars / leashes</p>
             </div>
             <div class="icon__block">
                 <svg width="60" height="60" class="icon">
                     <use xlink:href="../assets/icons/svgSprie.svg#sleeping-area"></use>
                 </svg>
-                <p class="help__subtitle subtitle">Sleeping areas</p>
+                <p class="icon__subtitle subtitle">Sleeping areas</p>
             </div>
         </div>
     </section>

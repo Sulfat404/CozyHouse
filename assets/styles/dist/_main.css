@@ -33,30 +33,18 @@
 .navbar__link {
   margin-right: 35px;
 }
-.navbar__link:active {
-  color: #FAFAFA;
-  border-bottom: 3px solid #F1CDB3;
-}
-.navbar__link:hover {
-  color: #FAFAFA;
-}
-
-.navbar__link_active {
-  color: #FAFAFA;
-  border-bottom: 3px solid #F1CDB3;
-}
 
 .main {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
 }
 .main .main__slogan {
   margin-bottom: 5vh;
   margin-right: 3vw;
 }
 .main .main__slogan .slogan__title {
-  width: 25vw;
   margin-bottom: 40px;
   color: #FFFFFF;
 }
@@ -71,7 +59,7 @@
   display: flex;
 }
 
-.about {
+.section__about {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -99,76 +87,44 @@
   display: flex;
   flex-direction: column;
   padding-top: 80px;
+  padding-bottom: 100px;
   align-items: center;
   justify-content: center;
   background-color: #F6F6F6;
+  position: relative;
 }
-
-.pets__title {
+.section__pets .pets__title {
   text-align: center;
   margin-bottom: 60px;
   color: #545454;
 }
-
-.pets__gallary {
+.section__pets .pets__gallary {
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-bottom: 60px;
   position: relative;
 }
-.pets__gallary .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 270px;
-  height: 435px;
-  margin-right: 3vw;
-  margin-left: 3vw;
-  cursor: pointer;
-  border-radius: 9px;
-  background-color: #FAFAFA;
-}
-.pets__gallary .card div {
-  margin-top: 3px;
-}
-.pets__gallary .card:hover {
-  box-shadow: 0 0 20px rgba(120, 117, 117, 0.5);
-}
-.pets__gallary .card .card__subtitle {
-  margin: 25px;
-  font-size: 20px;
-  line-height: 23px;
-  color: #545454;
+
+.card_pMain {
+  margin-right: 45px;
+  margin-left: 45px;
 }
 
-.btn__pets {
-  margin-bottom: 100px;
-}
-
-.wrapper__btn {
+.wrapper__btn-circle {
   position: absolute;
 }
 
-.wrapper__btn.left {
-  left: -3%;
-  top: 50%;
-  transform: translate(0, -50%);
+.wrapper__btn-circle-left {
+  left: 0;
+  bottom: 50%;
+  transform: translate(50%, 0);
 }
 
-.wrapper__btn.right {
-  right: -3%;
-  top: 50%;
-  transform: translate(0, -50%);
-}
-
-.right-btn-circle_pets {
-  margin: 10px;
-}
-
-.btn-circle.btn__circle_peach {
-  background-color: #F1CDB3;
+.wrapper__btn-circle-right {
+  right: 0;
+  bottom: 50%;
+  transform: translate(-50%, 0);
 }
 
 .section__help {
@@ -190,7 +146,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 70vw;
+  max-width: 65vw;
   width: 100%;
 }
 .gallary__help .icon__block {
@@ -202,7 +158,7 @@
   justify-content: center;
   align-items: center;
 }
-.gallary__help .help__subtitle {
+.gallary__help .icon__subtitle {
   margin-top: 30px;
   color: #545454;
 }

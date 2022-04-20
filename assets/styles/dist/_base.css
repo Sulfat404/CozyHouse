@@ -228,6 +228,12 @@ body {
   max-width: 1280px;
 }
 
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
 ul,
 li {
   list-style: none;
@@ -244,4 +250,59 @@ button {
 .section {
   padding-right: 40px;
   padding-left: 40px;
+}
+
+.burger__wrapper-sticks {
+  display: none;
+}
+
+.burger__stick {
+  width: 30px;
+  height: 2px;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar__list {
+    display: none;
+  }
+
+  .burger__wrapper-sticks {
+    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .burger__stick {
+    margin-bottom: 8px;
+  }
+  .burger__stick:last-child {
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 576px) {
+  .section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .title {
+    font-size: 25px;
+    line-height: 130%;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    line-height: 110%;
+  }
+
+  .text {
+    font-size: 13px;
+    line-height: 24px;
+  }
+
+  .btn__style-transparent,
+.btn__style-peach {
+    font-size: 17px;
+    line-height: 130%;
+  }
 }

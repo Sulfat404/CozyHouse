@@ -1,10 +1,14 @@
 @import "./fonts";
 @import "./variables";
 
-.header_pets {
+.header__pets {
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 40px;
+}
+
+.burger__stick_pPets {
+    background-color: #000000;
 }
 
 .section__gallary {
@@ -17,7 +21,7 @@
         padding-bottom: 3vh;
         text-align: center;
         color: #545454;
-    }    
+    }
 }
 
 .gallary__wrapper {
@@ -46,10 +50,19 @@
     margin: 20px;
 }
 
-@media screen and (max-width: 992px){
-  .gallary__wrapper .gallary__items {
-    width: 620px;
-  }
-    
-}
+@media screen and (max-width: 992px) {
 
+    .header__pets {
+        padding-left: 30px;
+    }
+
+    .gallary__wrapper .gallary__items {
+        width: 620px;
+    }
+
+}
+@media screen and (max-width: 770px) { 
+    .gallary__wrapper .gallary__items {
+        width: 320px;
+    }
+}

@@ -1,5 +1,6 @@
 @import "./fonts";
-@import "./variables";
+@import "./components";
+@import "./layout";
 
 .header__pets {
     padding-top: 30px;
@@ -50,18 +51,22 @@
     margin: 20px;
 }
 
+
+@media screen and (max-width: 1260px) {
+    .gallary__wrapper .gallary__items {
+        width: 620px;
+    }
+}
 @media screen and (max-width: 992px) {
 
     .header__pets {
         padding-left: 30px;
     }
-
-    .gallary__wrapper .gallary__items {
-        width: 620px;
-    }
-
 }
-@media screen and (max-width: 770px) { 
+@media screen and (max-width: 768px) { 
+    .navbar__list {
+        display: none;
+    }
     .gallary__wrapper .gallary__items {
         width: 320px;
     }

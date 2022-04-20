@@ -1,0 +1,126 @@
+.header {
+  padding-top: 60px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__list {
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar__item {
+  margin-right: 35px;
+}
+.navbar__item:last-child {
+  margin-right: 0;
+}
+
+.footer__section {
+  background: linear-gradient(to right, #5B483A, #211F20);
+}
+
+.footer {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.footer__column {
+  margin-top: 56px;
+  width: 33%;
+  max-width: 100%;
+}
+.footer__column:last-child {
+  display: flex;
+  align-self: flex-end;
+}
+.footer__column:nth-child(2) {
+  margin-left: 3%;
+  margin-right: 5%;
+}
+
+.footer__title {
+  color: #ffffff;
+}
+
+.footer-svg__block {
+  width: 302px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.footer-svg__block .footer-svg__subtitle {
+  width: 18vw;
+  margin-left: 20px;
+  color: #F1CDB3;
+}
+.footer-svg__block .footer-svg__subtitle .footer-svg__link {
+  color: #F1CDB3;
+}
+
+@media screen and (max-width: 992px) {
+  .footer__section .footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .footer__section .footer .footer__column {
+    flex-basis: 45%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .footer__title {
+    width: 70%;
+  }
+
+  .footer-svg__block {
+    margin-bottom: 30px;
+  }
+  .footer-svg__block .footer-svg__subtitle {
+    width: 38vw;
+  }
+}
+@media screen and (max-width: 576px) {
+  .footer__section .footer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 100%;
+    width: 100%;
+  }
+  .footer__section .footer .footer__column {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  .footer__section .footer .footer__column:first-child {
+    flex-basis: 100%;
+    margin-right: 0;
+  }
+  .footer__section .footer .footer__column:last-child {
+    flex-basis: 100%;
+  }
+
+  .footer-svg__block {
+    width: auto;
+    margin-bottom: 0;
+  }
+  .footer-svg__block .footer-svg__subtitle {
+    width: 100%;
+    font-size: 20px;
+    line-height: 115%;
+    margin-left: 2vw;
+  }
+}

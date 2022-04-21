@@ -7,6 +7,15 @@
   font-family: "Georgia";
   src: url("../../fonts/Georgia.ttf");
 }
+.burger__wrapper-sticks {
+  display: none;
+}
+
+.burger__stick {
+  width: 30px;
+  height: 2px;
+}
+
 .title {
   font-family: "Georgia";
   font-style: normal;
@@ -219,6 +228,7 @@
   margin-top: 9px;
 }
 .card:hover {
+  transition: all 0.5s ease-out;
   box-shadow: 0 0 20px rgba(120, 117, 117, 0.5);
 }
 .card .card__subtitle {
@@ -265,15 +275,6 @@ button {
 .section {
   padding-right: 40px;
   padding-left: 40px;
-}
-
-.burger__wrapper-sticks {
-  display: none;
-}
-
-.burger__stick {
-  width: 30px;
-  height: 2px;
 }
 
 @media screen and (max-width: 768px) {
@@ -356,7 +357,7 @@ button {
 
 .footer__column {
   margin-top: 56px;
-  width: 30%;
+  width: 33%;
   max-width: 100%;
 }
 .footer__column:last-child {
@@ -382,13 +383,35 @@ button {
 }
 .footer-svg__block .footer-svg__subtitle {
   width: 18vw;
-  margin-left: 1vw;
+  margin-left: 20px;
   color: #F1CDB3;
 }
 .footer-svg__block .footer-svg__subtitle .footer-svg__link {
   color: #F1CDB3;
 }
 
+@media screen and (max-width: 992px) {
+  .footer__section .footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .footer__section .footer .footer__column {
+    flex-basis: 45%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .footer__title {
+    width: 70%;
+  }
+
+  .footer-svg__block {
+    margin-bottom: 30px;
+  }
+  .footer-svg__block .footer-svg__subtitle {
+    width: 38vw;
+  }
+}
 @media screen and (max-width: 576px) {
   .footer__section .footer {
     flex-direction: column;

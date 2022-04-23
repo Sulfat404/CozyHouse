@@ -1,7 +1,8 @@
 @import "./fonts";
-@import "./components";
+
 @import "./layout";
 
+// header
 .header-background {
   background: linear-gradient(to bottom right, #5B483A, 30%, #1b1a1a);
 }
@@ -71,7 +72,6 @@
 }
 
 // pets
-
 .gallary__wrapper_pMain {
   display: flex;
   flex-direction: column;
@@ -270,6 +270,7 @@
   }
 
   .main__wrapper-img {
+    margin-left: auto;
     height: auto;
 
     .main__img {
@@ -336,25 +337,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .navbar__list {
-    display: none;
-  }
-
-  .burger__wrapper-sticks {
-    margin-right: 40px;
-    display: flex;
-    flex-direction: column;
-
-  }
-
-  .burger__stick {
-    margin-bottom: 8px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
   .main .main__slogan {
     margin-right: 0;
     width: 90vw;
@@ -395,9 +377,11 @@
       width: 260px;
     }
   }
+
   .section__pets .pets__title {
     margin-bottom: 0;
   }
+
   .gallary__wrapper_pMain {
     height: 618px;
     margin-bottom: 40px;
@@ -453,5 +437,6 @@
   .donation__img_img {
     width: 300px;
   }
-
 }
+
+@import "./components";

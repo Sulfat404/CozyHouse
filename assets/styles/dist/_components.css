@@ -273,10 +273,73 @@ button {
     display: none;
   }
 
-  .burger__wrapper-sticks {
-    margin-right: 40px;
+  .header.header-open {
+    z-index: 30;
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    right: 0;
+    background-color: #292929;
+    width: 320px;
+    height: 100%;
+    justify-self: center;
+    box-shadow: -100px 0px 14px -2px rgba(45, 36, 36, 0.66);
+  }
+
+  .navbar__list {
+    display: none;
+  }
+
+  .navbar__list.header-open {
+    width: 243px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .navbar__list.header-open .navbar__item {
+    margin-right: 0;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .navbar__list.header-open .navbar__link {
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 160%;
+  }
+
+  .burger__wrapper-sticks {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+
+  .burger__stick {
+    margin-bottom: 8px;
+  }
+  .burger__stick:last-child {
+    margin-bottom: 0;
+  }
+
+  .burger__wrapper-sticks.header-open {
+    transition: all 0.5s;
+    transform: rotate(90deg);
+  }
+
+  .burger__wrapper-sticks {
+    display: flex;
+    width: 50px;
+    height: 50px;
   }
 
   .burger__stick {

@@ -56,26 +56,30 @@
     .gallary__wrapper .gallary__items {
         width: 620px;
     }
+
+    .gallary__wrapper {
+        height: 1530px;
+        justify-content: flex-start;
+
+        .gallary__items {
+            height: 1403px;
+            flex-direction: row;
+        }
+    }
+
+    .card__pPets {
+        margin: 15px;
+    }
+
+    .btns-circle__wrapper {
+        margin-bottom: 76px;
+    }
 }
 
 @media screen and (max-width: 992px) {
 
     .header__pets {
         padding-left: 30px;
-    }
-    .gallary__wrapper {
-        height: 1530px;
-        justify-content: flex-start;
-        .gallary__items {
-            height: 1403px;
-            flex-direction: row;
-        }
-    }
-    .card__pPets {
-        margin: 15px;
-    }
-    .btns-circle__wrapper {
-        margin-bottom: 76px;
     }
 }
 
@@ -90,12 +94,10 @@
 
     .gallary__wrapper {
         justify-content: center;
-        .gallary__items {
-        justify-content: center;
 
+        .gallary__items {
+            justify-content: center;
             width: 320px;
         }
     }
-    
-
 }

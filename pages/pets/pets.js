@@ -16,7 +16,6 @@ navBarItems.forEach((navBarItem) => {
 if (burger.classList.contains('header-open')) {
     let windowInnerWidth = document.documentElement.clientWidth;
     if (windowInnerWidth > 768) {
-        console.log('burgerOpen')
         burgerClose();
     }
 }
@@ -33,7 +32,6 @@ function burgerOpen() {
 }
 
 function burgerClose() {
-    console.log("'hh")
     let arrOfOpenElem = document.querySelectorAll('.header-open');
     arrOfOpenElem.forEach((elem) => {
         elem.classList.remove('header-open');

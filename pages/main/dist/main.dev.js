@@ -16,7 +16,6 @@ if (burger.classList.contains('header-open')) {
   var windowInnerWidth = document.documentElement.clientWidth;
 
   if (windowInnerWidth > 768) {
-    console.log('burgerOpen');
     burgerClose();
   }
 }
@@ -32,7 +31,6 @@ function burgerOpen() {
 }
 
 function burgerClose() {
-  console.log("'hh");
   var arrOfOpenElem = document.querySelectorAll('.header-open');
   arrOfOpenElem.forEach(function (elem) {
     elem.classList.remove('header-open');

@@ -501,7 +501,7 @@ button {
   }
 
   .footer-svg__block {
-    width: auto;
+    width: 270px;
     margin-bottom: 0;
   }
   .footer-svg__block .footer-svg__subtitle {
@@ -566,6 +566,23 @@ button {
   .header__pets {
     padding-left: 30px;
   }
+
+  .gallary__wrapper {
+    height: 1530px;
+    justify-content: flex-start;
+  }
+  .gallary__wrapper .gallary__items {
+    height: 1403px;
+    flex-direction: row;
+  }
+
+  .card__pPets {
+    margin: 15px;
+  }
+
+  .btns-circle__wrapper {
+    margin-bottom: 76px;
+  }
 }
 @media screen and (max-width: 768px) {
   .navbar__list {
@@ -576,7 +593,11 @@ button {
     background-color: #F6F6F6;
   }
 
+  .gallary__wrapper {
+    justify-content: center;
+  }
   .gallary__wrapper .gallary__items {
+    justify-content: center;
     width: 320px;
   }
 }

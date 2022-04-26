@@ -72,43 +72,38 @@
 }
 
 // pets
-.gallary__wrapper_pMain {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 512px;
-  position: relative;
-}
+
 
 .gallary__items_pMain {
   // количество рядов (их 1)
+  height: 470px;
   width: 1080px;
   overflow-x: hidden;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
 }
 
-.card_pMain {
+.card.card_pMain {
+  margin: 0;
   margin-right: 45px;
   margin-left: 45px;
 }
-
-
 
 .wrapper__btn-circle {
   position: absolute;
 }
 
 .wrapper__btn-circle-left {
-  left: -5%;
+  left: 0;
   bottom: 50%;
   transform: translate(50%, 0);
 }
 
 .wrapper__btn-circle-right {
-  right: -5%;
+  right: 0;
   bottom: 50%;
   transform: translate(-50%, 0);
 }
@@ -304,10 +299,6 @@
     margin-left: 20px;
   }
 
-  .gallary__wrapper_pMain {
-    width: 708px;
-  }
-
   .gallary__items_pMain {
     width: 620px;
   }
@@ -336,6 +327,13 @@
   }
 }
 
+@media screen and (max-width: 1280px) {
+  .card.card_pMain {
+    margin-right: 4vw;
+    margin-left: 4vw;
+  }
+  
+}
 @media screen and (max-width: 768px) {
   .main .main__slogan {
     margin-right: 0;
@@ -380,12 +378,6 @@
 
   .section__pets .pets__title {
     margin-bottom: 0;
-  }
-
-  .gallary__wrapper_pMain {
-    height: 618px;
-    margin-bottom: 40px;
-    width: 408px;
   }
 
   .gallary__items_pMain {

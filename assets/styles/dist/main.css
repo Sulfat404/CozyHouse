@@ -212,17 +212,17 @@
   margin-left: 45px;
 }
 
-.wrapper__btn-circle {
+.btn-circle_pMain {
   position: absolute;
 }
 
-.wrapper__btn-circle-left {
+.btn-circle__left {
   left: 0;
   bottom: 50%;
   transform: translate(50%, 0);
 }
 
-.wrapper__btn-circle-right {
+.btn-circle__right {
   right: 0;
   bottom: 50%;
   transform: translate(-50%, 0);
@@ -470,31 +470,25 @@
     margin-bottom: 0;
   }
 
+  .btn-pets__form {
+    margin-top: 40px;
+  }
+
   .gallary__items_pMain {
     width: 300px;
   }
 
-  .wrapper__btn-circle {
-    margin: 10px;
+  .btn-circle__left {
+    left: 25vw;
+    bottom: 180px;
   }
 
-  .wrapper__btn-circle-left {
-    bottom: 0;
-    left: 50px;
-    transform: translate(50%, 0);
-  }
-
-  .wrapper__btn-circle-right {
-    bottom: 0;
-    right: 50px;
-    transform: translate(-50%, 0);
+  .btn-circle__right {
+    right: 25vw;
+    bottom: 180px;
   }
 }
 @media screen and (max-width: 576px) {
-  .gallary__wrapper_pMain {
-    width: 300px;
-  }
-
   .help__title {
     margin-top: 42px;
     margin-bottom: 0;
@@ -515,6 +509,16 @@
 
   .donation__img_img {
     width: 300px;
+  }
+
+  .btn-circle__left {
+    left: 10vw;
+    bottom: 180px;
+  }
+
+  .btn-circle__right {
+    right: 10vw;
+    bottom: 180px;
   }
 }
 .burger__wrapper-sticks {
@@ -678,7 +682,6 @@
 }
 
 .btns-circle__wrapper {
-  width: 340px;
   height: 60px;
   display: flex;
   flex-direction: row;

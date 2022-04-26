@@ -10,13 +10,16 @@ var header = document.querySelector(".header");
 var navBar = document.querySelector(".navbar__list");
 var navBarItems = document.querySelectorAll(".navbar__item"); // buttons
 
-var btnRigth_Step = document.querySelector(".wrapper__btn-circle-left");
-var btnLeft_Step = document.querySelector(".wrapper__btn-circle-right");
+var btnRigth_Step = document.querySelector(".btn-circle__right");
+var btnLeft_Step = document.querySelector(".btn-circle__left");
 burger.addEventListener("click", burgerOpen);
-window.addEventListener("resize", checkSize);
+window.addEventListener("resize", checkWindowSize);
 navBarItems.forEach(function (navBarItem) {
   navBarItem.addEventListener("click", burgerClose);
-}); // Cards begin
+});
+window.addEventListener("load", initCards);
+btnRigth_Step.addEventListener("click", moveGallaryOneStep);
+btnLeft_Step.addEventListener("click", moveGallaryOneStep); // Cards begin
 
 var shuffledArrs;
 var cards;
@@ -24,8 +27,7 @@ var pages;
 var btnStep = 1;
 
 function initCards() {
-  cards = checkWindowSizeForGallary(); // Генерируется псевдо-массив с 48 карточками
-
+  cards = checkWindowSizeForGallary();
   shuffledArrs = createPseudorandomArr(cards);
   var shuffledArrsForRender = shuffledArrs.slice(0, cards);
   generateCard(shuffledArrsForRender);
@@ -58,16 +60,7 @@ function burgerClose() {
   });
 }
 
-function checkSize() {
-  var windowInnerWidth = document.documentElement.clientWidth;
-
-  if (windowInnerWidth > 768) {
-    burgerClose();
-  }
-} // gallary
-
-
-function checkWindowSize(event) {
+function checkWindowSize() {
   var windowInnerWidth = document.documentElement.clientWidth;
 
   if (windowInnerWidth > 768) {
@@ -96,18 +89,13 @@ function createPseudorandomArr(cards) {
   // Берет массив объектов из data.js, рандомизирует и конкатинирует в один псевдослучайный массив
   var shuffledArrs = [];
 
-  for (var set = 1; set <= 2; set++) {
-    var shuffleArr = _pets["default"].map(function (i) {
-      return [Math.random(), i];
-    }).sort().map(function (i) {
-      return i[1];
-    });
+  var shuffleArr = _pets["default"].map(function (i) {
+    return [Math.random(), i];
+  }).sort().map(function (i) {
+    return i[1];
+  });
 
-    shuffledArrs = shuffledArrs.concat(shuffleArr.slice(0, cards));
-    console.log(shuffledArrs);
-  }
-
-  ;
+  shuffledArrs = shuffledArrs.concat(shuffleArr.slice(0, cards));
   return shuffledArrs;
 }
 
@@ -120,56 +108,6 @@ function generateCard(shuffledArrsForRender) {
   }
 }
 
-function changeNumBtn(btnStep) {
-  btnNumber.innerHTML = "<span>".concat(btnStep, "</span>");
-} // function removeClasses_disabled() {
-//   let btnsDisabled = document.querySelectorAll(".btn-circle_disabled");
-//   btnsDisabled.forEach((item) => item.classList.remove("btn-circle_disabled"));
-// }
-
-
-function moveGallaryOneStepRight() {
-  // Проверка на наличие класса disabled
-  if (btnRigth_Step.classList.contains("btn-circle_disabled")) {
-    return;
-  } // Убирается класс btn-circle_disabled
-
-
-  removeClasses_disabled(); // Генерация новых карточек, выбор из псевдослучайного массива
-
-  startNumCards += cards;
-  var shuffledArrsForRender = shuffledArrs.slice(startNumCards, startNumCards + cards);
-  generateCard(shuffledArrsForRender); // Смена номера на кнопке
-
-  btnStep += 1;
-  changeNumBtn(btnStep); // Проверка на конец списка
-
-  if (startNumCards === shuffledArrs.length - cards) {
-    btnsRight.forEach(function (item) {
-      return item.classList.add("btn-circle_disabled");
-    });
-  }
-}
-
-function moveGallaryOneStepLeft() {
-  // Проверка на наличие класса disabled
-  if (btnLeft_Step.classList.contains("btn-circle_disabled")) {
-    return;
-  } // Убираем класс disabled у дургих кнопок
-
-
-  removeClasses_disabled(); // Генерация новых карточек, выбор из псевдослучайного массива
-
-  startNumCards -= cards;
-  var shuffledArrsForRender = shuffledArrs.slice(startNumCards, startNumCards + cards);
-  generateCard(shuffledArrsForRender); // Кнопка с цифрой
-
-  btnStep -= 1;
-  changeNumBtn(btnStep); // Проверка на конец списка
-
-  if (startNumCards === 0) {
-    btnsLeft.forEach(function (item) {
-      return item.classList.add("btn-circle_disabled");
-    });
-  }
+function moveGallaryOneStep() {
+  initCards();
 }

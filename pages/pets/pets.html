@@ -2,112 +2,107 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/styles/css/pets.min.css">
-    <title>Our pets</title>
-    <link type="image/x-icon" href="../../assets/images/favicDogs.png" rel="shortcut icon">
-    <link type="Image/x-icon" href="../../assets/images/favicDogs.png" rel="icon">
-    <script src="../svgSprite.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../assets/styles/css/pets.min.css">
+  <title>Our pets</title>
+  <link type="image/x-icon" href="../../assets/images/favicDogs.png" rel="shortcut icon">
+  <link type="Image/x-icon" href="../../assets/images/favicDogs.png" rel="icon">
+  <script src="../svgSprite.js"></script>
 </head>
 
 <body>
-    <header class="section header header__pets">
-        <div class="header__logo">
-            <div class="logo__name"><a class="logo__name title title_grey" href="../main/main.html">Cozy House</a></div>
-            <div class="logo__description text text_grey">Shelter for pets in Boston</div>
-        </div>
-        <nav class="header__navbar">
-            <div class="burger__wrapper-sticks burger__wrapper-sticks_pPets">
-                <div class="burger__stick burger__stick_pPets"></div>
-                <div class="burger__stick burger__stick_pPets"></div>
-                <div class="burger__stick burger__stick_pPets"></div>
-            </div>
-            <ul class="navbar__list">
-                <li class="navbar__item"><a href="../main/main.html" class="navbar__link link-dark">About the shelter</a></li>
-                <li class="navbar__item navbar__link-dark_active"><a href="#" class="navbar__link link-dark">Our pets</a></li>
-                <li class="navbar__item"><a href="../main/main.html#help" class="navbar__link link-dark">Help the shelter</a></li>
-                <li class="navbar__item"><a href="#contacts" class="navbar__link link-dark">Contacts</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section class="section section__gallary">
-        <h2 class="gallary__title title">Our friends who<br>are looking for a house</h2>
-        <div class="gallary__wrapper">
-            <div class="gallary__items">
-            </div>
-            <div class="btns-circle__wrapper">
-                <div class="btn-circle__wrapper">
-                    <button class="btn-circle btn-circle_left subtitle btn-circle_disabled">
-                        <span>
-                            <span><<</span>
-                    </button>
-                </div>
-                <div class="btn-circle__wrapper">
-                    <button class="btn-circle btn-circle_left subtitle btn-circle_disabled">
-                        <span>
-                            <span><</span>
-                    </button>
-                </div>
-                <div class="btn-circle__wrapper">
-                    <button class="btn-circle subtitle btn-circle_number">
-                        <span>1</span>
-                    </button>
-                </div>
-                <div class="btn-circle__wrapper">
-                    <button class="btn-circle btn-circle_right subtitle btn-circle_right-oneStep">
-                        <span>></span>
-                    </button>
-                </div>
-                <div class="btn-circle__wrapper">
-                    <button class="btn-circle btn-circle_right subtitle btn-circle_right-oneStep">
-                        <span>>></span>
-                    </button>
-                </div>
-            </div>
-        </div>
+  <header class="section header header__pets">
+    <div class="header__logo">
+      <div class="logo__name"><a class="logo__name title title_grey" href="../main/main.html">Cozy House</a></div>
+      <div class="logo__description text text_grey">Shelter for pets in Boston</div>
+    </div>
+    <nav class="header__navbar">
+      <div class="burger__wrapper-sticks burger__wrapper-sticks_pPets">
+        <div class="burger__stick burger__stick_pPets"></div>
+        <div class="burger__stick burger__stick_pPets"></div>
+        <div class="burger__stick burger__stick_pPets"></div>
+      </div>
+      <ul class="navbar__list">
+        <li class="navbar__item"><a href="../main/main.html" class="navbar__link link-dark">About the shelter</a></li>
+        <li class="navbar__item navbar__link-dark_active"><a href="#" class="navbar__link link-dark">Our pets</a></li>
+        <li class="navbar__item"><a href="../main/main.html#help" class="navbar__link link-dark">Help the shelter</a>
+        </li>
+        <li class="navbar__item"><a href="#contacts" class="navbar__link link-dark">Contacts</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="section section__gallary">
+    <h2 class="gallary__title title">Our friends who<br>are looking for a house</h2>
+    <div class="gallary__wrapper">
+      <div class="gallary__items">
+      </div>
+      <div class="btns-circle__wrapper">
+        <button class="btn-circle btn-circle_left subtitle btn-circle_disabled btn-circle_leftAll">
+          <span>&lt;&lt;</span>
+        </button>
+        <button class="btn-circle btn-circle_left subtitle btn-circle_left-oneStep btn-circle_disabled">
+          <span>&lt;</span>
+        </button>
+        <button class="btn-circle subtitle btn-circle_number">
+          <span>1</span>
+        </button>
+        <button class="btn-circle btn-circle_right subtitle btn-circle_right-oneStep">
+          <span>></span>
+        </button>
+        <button class="btn-circle btn-circle_right subtitle btn-circle_rightAll">
+          <span>>></span>
+        </button>
+      </div>
+    </div>
 
-    </section>
-    <section class="section footer__section">
-        <footer id="contacts" class="footer">
-            <div class="footer__column">
-                <h2 class="footer__title title">For questions and suggestions</h2>
-                <div class="footer-svg__block">
-                    <svg width="40" height="32" class="icon">
-                        <use xlink:href="../../assets/icons/svgSprie.svg#icon-email"></use>
-                    </svg>
-                    <p class="footer-svg__subtitle subtitle"><a class="footer-svg__link" href = "mailto: email@shelter.com">email@shelter.com</a></p>
-                </div>
-                <div class="footer-svg__block">
-                    <svg width="40" height="32" class="icon">
-                        <use xlink:href="../../assets/icons/svgSprie.svg#phone"></use>
-                    </svg>
-                    <p class="footer-svg__subtitle subtitle"><a class="footer-svg__link" href="tel:+13 674 567 75 54">+13 674 567 75 54</a></p>
-                </div>
-            </div>
-            <div class="footer__column">
-                <h2 class="footer__title title">We are waiting for your visit</h2>
-                <div class="footer-svg__block">
-                    <svg width="22" height="32" class="icon">
-                        <use xlink:href="../../assets/icons/svgSprie.svg#geo"></use>
-                    </svg>
-                    <p class="footer-svg__subtitle subtitle"><a class="footer-svg__link" href="https://www.google.com/maps/place/1+Centre+St,+Boston,+MA+02130,+%D0%A1%D0%A8%D0%90/@42.3227448,-71.1019048,17z/data=!3m1!4b1!4m5!3m4!1s0x89e379804904c2e1:0xf2288376436c7143!8m2!3d42.3227448!4d-71.0997161">1 Central Street, Boston (entrance from the store)</a></p>
-                </div>
-                <div class="footer-svg__block">
-                    <svg width="22" height="32" class="icon">
-                        <use xlink:href="../../assets/icons/svgSprie.svg#geo"></use>
-                    </svg>
-                    <p class="footer-svg__subtitle subtitle"><a class="footer-svg__link" href="https://www.google.com/maps/place/18+S+Park+Cres,+London+SE6+1JW,+%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%BE%D0%B1%D1%80%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F/@51.4424531,0.0036272,17z/data=!3m1!4b1!4m5!3m4!1s0x47d8a9e35f520529:0x8d1b5611767e32ec!8m2!3d51.4424531!4d0.0058159">18 South Park, London</a></p>
-                </div>
-            </div>
-            <div class="footer__column">
-                <img src="../../assets/images/footer-puppy.jpg" alt="footer-puppy">
-            </div>
-        </footer>
-    </section>
-    <script type="module" src="./pets.js"></script>
-    <script type="module" src="../../assets/data/pets.js"></script>
+  </section>
+  <section class="section footer__section">
+    <footer id="contacts" class="footer">
+      <div class="footer__column">
+        <h2 class="footer__title title">For questions and suggestions</h2>
+        <div class="footer-svg__block">
+          <svg width="40" height="32" class="icon">
+            <use xlink:href="../../assets/icons/svgSprie.svg#icon-email"></use>
+          </svg>
+          <p class="footer-svg__subtitle subtitle"><a class="footer-svg__link"
+              href="mailto: email@shelter.com">email@shelter.com</a></p>
+        </div>
+        <div class="footer-svg__block">
+          <svg width="40" height="32" class="icon">
+            <use xlink:href="../../assets/icons/svgSprie.svg#phone"></use>
+          </svg>
+          <p class="footer-svg__subtitle subtitle"><a class="footer-svg__link" href="tel:+13 674 567 75 54">+13 674 567
+              75 54</a></p>
+        </div>
+      </div>
+      <div class="footer__column">
+        <h2 class="footer__title title">We are waiting for your visit</h2>
+        <div class="footer-svg__block">
+          <svg width="22" height="32" class="icon">
+            <use xlink:href="../../assets/icons/svgSprie.svg#geo"></use>
+          </svg>
+          <p class="footer-svg__subtitle subtitle"><a class="footer-svg__link"
+              href="https://www.google.com/maps/place/1+Centre+St,+Boston,+MA+02130,+%D0%A1%D0%A8%D0%90/@42.3227448,-71.1019048,17z/data=!3m1!4b1!4m5!3m4!1s0x89e379804904c2e1:0xf2288376436c7143!8m2!3d42.3227448!4d-71.0997161">1
+              Central Street, Boston (entrance from the store)</a></p>
+        </div>
+        <div class="footer-svg__block">
+          <svg width="22" height="32" class="icon">
+            <use xlink:href="../../assets/icons/svgSprie.svg#geo"></use>
+          </svg>
+          <p class="footer-svg__subtitle subtitle"><a class="footer-svg__link"
+              href="https://www.google.com/maps/place/18+S+Park+Cres,+London+SE6+1JW,+%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%BE%D0%B1%D1%80%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F/@51.4424531,0.0036272,17z/data=!3m1!4b1!4m5!3m4!1s0x47d8a9e35f520529:0x8d1b5611767e32ec!8m2!3d51.4424531!4d0.0058159">18
+              South Park, London</a></p>
+        </div>
+      </div>
+      <div class="footer__column">
+        <img src="../../assets/images/footer-puppy.jpg" alt="footer-puppy">
+      </div>
+    </footer>
+  </section>
+  <script type="module" src="./pets.js"></script>
+  <script type="module" src="../../assets/data/pets.js"></script>
 </body>
 
 </html>

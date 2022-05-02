@@ -7,12 +7,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var burger = document.querySelector(".burger__wrapper-sticks");
 var header = document.querySelector(".header");
 var navBar = document.querySelector(".navbar__list");
-var navBarItems = document.querySelectorAll(".navbar__item"); // buttons
+var navBarItems = document.querySelectorAll(".navbar__item");
+var body = document.querySelector(".body"); // buttons
 
 var btnRigth_Step = document.querySelector(".btn-circle__right");
-var btnLeft_Step = document.querySelector(".btn-circle__left");
-var setOfCards; //Для поп-апа
+var btnLeft_Step = document.querySelector(".btn-circle__left"); //Для поп-апа
 
+var setOfCards;
+var popup;
 burger.addEventListener("click", burgerOpen);
 window.addEventListener("resize", checkWindowSize);
 navBarItems.forEach(function (navBarItem) {
@@ -48,6 +50,7 @@ function burgerOpen() {
     return burgerClose();
   }
 
+  body.classList.add("noscroll");
   burger.classList.add("header-open");
   navBar.classList.add("header-open");
   header.classList.add("header-open");
@@ -58,6 +61,7 @@ function burgerClose() {
   arrOfOpenElem.forEach(function (elem) {
     elem.classList.remove("header-open");
   });
+  body.classList.remove("noscroll");
 }
 
 function checkWindowSize() {
@@ -104,7 +108,7 @@ function generateCard(shuffledArrsForRender) {
   gallaryItems.innerHTML = "";
 
   for (var card = 1; card <= shuffledArrsForRender.length; card++) {
-    gallaryItems.innerHTML += "<div class=\"card card_pMain\">\n              <div>\n                  <img src=".concat(shuffledArrsForRender[card - 1].img, " alt=\"").concat(shuffledArrsForRender[card - 1].name, "\">\n              </div>\n              <p class=\"title card__subtitle\">").concat(shuffledArrsForRender[card - 1].name, "</p>\n              <button class=\"btn__style-transparent\">Learn more</button>\n          </div>");
+    gallaryItems.innerHTML += "<div class=\"card card_pMain\" id=\"".concat(shuffledArrsForRender[card - 1].name, "\">\n              <div>\n                  <img src=").concat(shuffledArrsForRender[card - 1].img, " alt=\"").concat(shuffledArrsForRender[card - 1].name, "\">\n              </div>\n              <p class=\"title card__subtitle\">").concat(shuffledArrsForRender[card - 1].name, "</p>\n              <button class=\"btn__style-transparent\">Learn more</button>\n          </div>");
   }
 
   setOfCards = document.querySelectorAll(".card_pMain");
@@ -114,16 +118,23 @@ function moveGallaryOneStep() {
   initCards();
 }
 
-setOfCards.forEach(function (card) {
-  return card.addEventListener("click", renderPopup);
-});
+function closePopup() {
+  body.classList.remove("noscroll");
+  popup.remove();
+}
 
-function renderPopup() {
-  var wrapperForPopup = document.querySelector(".body");
-  console.log(wrapperForPopup);
-} // filter
+document.addEventListener("click", function (e) {
+  var petsName = e.target.closest('.card');
+  console.log(petsName.id);
 
+  for (var i = 0; i < setOfCards.length; i++) {
+    if (petsName.id === setOfCards.id[i]) {
+      renderPopup(e, i);
+    }
+  }
+}); // popup
 
-var arr = [3, 6, 2, 9, 10, 1];
-
-var map = function map(arr, fn) {};
+function renderPopup(e, i) {
+  body.classList.add("noscroll");
+  body.innerHTML += "    <div class=\"popup__wrapper\">\n  <div class=\"popup\">\n    <div class=\"btnClose__wrapper\">\n      <svg width=\"62\" height=\"62\" class=\"popup__btnClose\">\n        <use xlink:href=\"../../assets/icons/svgSprie.svg#popupBtn\"></use>\n      </svg>\n    </div>\n    <div class=\"popup__img\">\n      <img src=\"../../assets/images/jennifer.jpg\" alt=\"jennifer\">\n    </div>\n    <div class=\"popup__content\">\n      <h2 class=\"title\">Jennifer</h2>\n      <h3 class=\"subtitle\">Dog - Labrador</h3>\n      <p>Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.</p>\n      <ul>\n        <li class=\"popup__item\">Age:</li>\n        <li class=\"popup__item\">Inoculations:</li>\n        <li class=\"popup__item\">Diseases:</li>\n        <li class=\"popup__item\">Parasites:</li>\n      </ul>\n    </div>\n  </div>";
+}

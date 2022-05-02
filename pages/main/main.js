@@ -4,11 +4,18 @@ const burger = document.querySelector(".burger__wrapper-sticks");
 const header = document.querySelector(".header");
 const navBar = document.querySelector(".navbar__list");
 const navBarItems = document.querySelectorAll(".navbar__item");
+let body = document.querySelector(".body")
 
 // buttons
 const btnRigth_Step = document.querySelector(".btn-circle__right");
 const btnLeft_Step = document.querySelector(".btn-circle__left");
-let setOfCards; //Для поп-апа
+
+//Для поп-апа
+let setOfCards; 
+let popup;
+
+
+
 
 
 burger.addEventListener("click", burgerOpen);
@@ -18,6 +25,7 @@ navBarItems.forEach((navBarItem) => {
 });
 btnRigth_Step.addEventListener("click", moveGallaryOneStep);
 btnLeft_Step.addEventListener("click", moveGallaryOneStep);
+
 
 // Cards begin
 let shuffledArrs;
@@ -45,6 +53,7 @@ function burgerOpen() {
   if (burger.classList.contains("header-open")) {
     return burgerClose();
   }
+  body.classList.add("noscroll");
   burger.classList.add("header-open");
   navBar.classList.add("header-open");
   header.classList.add("header-open");
@@ -54,7 +63,10 @@ function burgerClose() {
   let arrOfOpenElem = document.querySelectorAll(".header-open");
   arrOfOpenElem.forEach((elem) => {
     elem.classList.remove("header-open");
+    
   });
+  body.classList.remove("noscroll");
+
 }
 
 function checkWindowSize() {
@@ -95,7 +107,7 @@ function generateCard(shuffledArrsForRender) {
   const gallaryItems = document.querySelector(".gallary__items_pMain");
   gallaryItems.innerHTML = "";
   for (let card = 1; card <= shuffledArrsForRender.length; card++) {
-    gallaryItems.innerHTML += `<div class="card card_pMain">
+    gallaryItems.innerHTML += `<div class="card card_pMain" id="${shuffledArrsForRender[card - 1].name}">
               <div>
                   <img src=${shuffledArrsForRender[card - 1].img} alt="${shuffledArrsForRender[card-1].name}">
               </div>
@@ -111,17 +123,51 @@ function moveGallaryOneStep() {
   initCards()
 }
 
-setOfCards.forEach((card) => card.addEventListener("click", renderPopup))
 
-function renderPopup() {
-  let wrapperForPopup = document.querySelector(".body");
-  console.log(wrapperForPopup);
+function closePopup() {
+  body.classList.remove("noscroll");
+  popup.remove();
+}
+
+document.addEventListener("click", (e) => {
+  let petsName = e.target.closest('.card');
+  console.log(petsName.id);
+  for (let i = 0; i < setOfCards.length; i++) {
+    if(petsName.id === setOfCards.id[i]) {
+      renderPopup(e, i);
+    }
+  }
+})
+
+
+// popup
+function renderPopup(e, i) {
+  body.classList.add("noscroll");
+  body.innerHTML += `    <div class="popup__wrapper">
+  <div class="popup">
+    <div class="btnClose__wrapper">
+      <svg width="62" height="62" class="popup__btnClose">
+        <use xlink:href="../../assets/icons/svgSprie.svg#popupBtn"></use>
+      </svg>
+    </div>
+    <div class="popup__img">
+      <img src="../../assets/images/jennifer.jpg" alt="jennifer">
+    </div>
+    <div class="popup__content">
+      <h2 class="title">Jennifer</h2>
+      <h3 class="subtitle">Dog - Labrador</h3>
+      <p>Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.</p>
+      <ul>
+        <li class="popup__item">Age:</li>
+        <li class="popup__item">Inoculations:</li>
+        <li class="popup__item">Diseases:</li>
+        <li class="popup__item">Parasites:</li>
+      </ul>
+    </div>
+  </div>`
 }
 
 
-// filter
-const arr = [3, 6, 2, 9, 10, 1];
 
-const map = (arr, fn) => {
 
-}
+

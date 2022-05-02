@@ -240,52 +240,13 @@
 
 
 
-*,
-html {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0 auto;
-    padding: 0;
-    width: 100%;
-    max-width: 1280px;
-}
-
-h1,
-h2 {
-    margin: 0;
-    padding: 0;
-}
-
-ul,
-li {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-}
-
-button {
-    cursor: pointer;
-}
-
-.section {
-    padding-right: 40px;
-    padding-left: 40px;
-}
-
-
 @media screen and (max-width: 768px) {
     .navbar__list {
         display: none;
     }
 
     .header.header-open {
+        transition: .5s;
         z-index: 30;
         position: fixed;
         display: flex;

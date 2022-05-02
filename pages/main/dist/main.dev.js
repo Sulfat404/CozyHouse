@@ -4,7 +4,6 @@ var _pets = _interopRequireDefault(require("../../assets/data/pets.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-// variables
 var burger = document.querySelector(".burger__wrapper-sticks");
 var header = document.querySelector(".header");
 var navBar = document.querySelector(".navbar__list");
@@ -12,12 +11,13 @@ var navBarItems = document.querySelectorAll(".navbar__item"); // buttons
 
 var btnRigth_Step = document.querySelector(".btn-circle__right");
 var btnLeft_Step = document.querySelector(".btn-circle__left");
+var setOfCards; //Для поп-апа
+
 burger.addEventListener("click", burgerOpen);
 window.addEventListener("resize", checkWindowSize);
 navBarItems.forEach(function (navBarItem) {
   navBarItem.addEventListener("click", burgerClose);
 });
-window.addEventListener("load", initCards);
 btnRigth_Step.addEventListener("click", moveGallaryOneStep);
 btnLeft_Step.addEventListener("click", moveGallaryOneStep); // Cards begin
 
@@ -106,8 +106,24 @@ function generateCard(shuffledArrsForRender) {
   for (var card = 1; card <= shuffledArrsForRender.length; card++) {
     gallaryItems.innerHTML += "<div class=\"card card_pMain\">\n              <div>\n                  <img src=".concat(shuffledArrsForRender[card - 1].img, " alt=\"").concat(shuffledArrsForRender[card - 1].name, "\">\n              </div>\n              <p class=\"title card__subtitle\">").concat(shuffledArrsForRender[card - 1].name, "</p>\n              <button class=\"btn__style-transparent\">Learn more</button>\n          </div>");
   }
+
+  setOfCards = document.querySelectorAll(".card_pMain");
 }
 
 function moveGallaryOneStep() {
   initCards();
 }
+
+setOfCards.forEach(function (card) {
+  return card.addEventListener("click", renderPopup);
+});
+
+function renderPopup() {
+  var wrapperForPopup = document.querySelector(".body");
+  console.log(wrapperForPopup);
+} // filter
+
+
+var arr = [3, 6, 2, 9, 10, 1];
+
+var map = function map(arr, fn) {};

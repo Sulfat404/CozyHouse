@@ -1,6 +1,5 @@
 import arrOfPets from "../../assets/data/pets.js";
 
-// variables
 const burger = document.querySelector(".burger__wrapper-sticks");
 const header = document.querySelector(".header");
 const navBar = document.querySelector(".navbar__list");
@@ -9,6 +8,7 @@ const navBarItems = document.querySelectorAll(".navbar__item");
 // buttons
 const btnRigth_Step = document.querySelector(".btn-circle__right");
 const btnLeft_Step = document.querySelector(".btn-circle__left");
+let setOfCards; //Для поп-апа
 
 
 burger.addEventListener("click", burgerOpen);
@@ -16,10 +16,8 @@ window.addEventListener("resize", checkWindowSize);
 navBarItems.forEach((navBarItem) => {
   navBarItem.addEventListener("click", burgerClose);
 });
-window.addEventListener("load", initCards);
 btnRigth_Step.addEventListener("click", moveGallaryOneStep);
 btnLeft_Step.addEventListener("click", moveGallaryOneStep);
-
 
 // Cards begin
 let shuffledArrs;
@@ -88,7 +86,7 @@ function createPseudorandomArr(cards) {
   .map((i) => [Math.random(), i])
   .sort()
   .map((i) => i[1]);
-shuffledArrs = shuffledArrs.concat(shuffleArr.slice(0, cards));
+  shuffledArrs = shuffledArrs.concat(shuffleArr.slice(0, cards));
   return shuffledArrs;
 }
 
@@ -105,6 +103,7 @@ function generateCard(shuffledArrsForRender) {
               <button class="btn__style-transparent">Learn more</button>
           </div>`;
   }
+  setOfCards = document.querySelectorAll(".card_pMain");
 }
 
 
@@ -112,4 +111,17 @@ function moveGallaryOneStep() {
   initCards()
 }
 
+setOfCards.forEach((card) => card.addEventListener("click", renderPopup))
 
+function renderPopup() {
+  let wrapperForPopup = document.querySelector(".body");
+  console.log(wrapperForPopup);
+}
+
+
+// filter
+const arr = [3, 6, 2, 9, 10, 1];
+
+const map = (arr, fn) => {
+
+}

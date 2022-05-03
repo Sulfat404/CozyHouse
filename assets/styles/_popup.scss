@@ -43,6 +43,8 @@
   width: 100%;
   max-height: 450px;
   height: 100%;
+  display: flex;
+  align-items: center;
 
   img {
     max-width: 450px;
@@ -77,6 +79,10 @@
   .popup {
     max-width: 730px;
   }
+
+  .popup__img {
+    margin: 2vw;
+  }
   .popup__img img {
     max-width: 350px;
     max-height: 350px;
@@ -90,10 +96,13 @@
 }
 
 @media screen and (max-width: 630px) {
+  .btnClose__wrapper {
+    right: 20%;
+  }
   .popup {
     justify-content: center;
     padding: 5vw;
-    max-width: 320px;
+    max-width: 240px;
 
   }
   .popup__img {

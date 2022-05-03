@@ -12,9 +12,7 @@ const btnLeft_Step = document.querySelector(".btn-circle__left");
 
 //Для поп-апа
 let setOfCards; 
-let popup;
-
-
+let popupWrapper;
 
 
 
@@ -32,11 +30,12 @@ let shuffledArrs;
 let cards;
 let pages;
 let btnStep = 1;
+let shuffledArrsForRender
 
 function initCards() {
   cards = checkWindowSizeForGallary();
   shuffledArrs = createPseudorandomArr(cards);
-  let shuffledArrsForRender = shuffledArrs.slice(0, cards);
+  shuffledArrsForRender = shuffledArrs.slice(0, cards);
   generateCard(shuffledArrsForRender);
 }
 
@@ -123,48 +122,71 @@ function moveGallaryOneStep() {
   initCards()
 }
 
+// popup
 
-function closePopup() {
-  body.classList.remove("noscroll");
-  popup.remove();
-}
+let numOfCard;
 
+// Обработчик event для событий клика кнопок и появления popup
 document.addEventListener("click", (e) => {
   let petsName = e.target.closest('.card');
-  console.log(petsName.id);
-  for (let i = 0; i < setOfCards.length; i++) {
-    if(petsName.id === setOfCards.id[i]) {
-      renderPopup(e, i);
+  let btnName = e.target.closest(".btn-circle_pMain")
+  if (petsName === null) {
+    if (btnName !== null) {
+      initCards();
+      return;
     }
+    return;
+  }
+  numOfCard = 0;
+  while(numOfCard < shuffledArrsForRender.length) {
+    if(petsName.id === shuffledArrsForRender[numOfCard].name) {
+      renderPopup();
+      break;
+    }
+    numOfCard++
   }
 })
 
 
-// popup
-function renderPopup(e, i) {
+
+document.addEventListener("click", (e) => {
+  let name = e.target;
+  if(name.id === 'popupWrapper' || name.id === "btnPopupClose") {
+    closePopup();
+  }
+})
+
+
+function renderPopup() {
   body.classList.add("noscroll");
-  body.innerHTML += `    <div class="popup__wrapper">
+  body.innerHTML += `    <div id="popupWrapper" class="popup__wrapper">
   <div class="popup">
-    <div class="btnClose__wrapper">
-      <svg width="62" height="62" class="popup__btnClose">
-        <use xlink:href="../../assets/icons/svgSprie.svg#popupBtn"></use>
+    <div id="btnPopupClose" class="btnClose__wrapper">
+      <svg id="btnPopupClose" width="52" height="52" class="popup__btnClose">
+        <use id="btnPopupClose" xlink:href="../../assets/icons/svgSprie.svg#popupBtn"></use>
       </svg>
     </div>
     <div class="popup__img">
-      <img src="../../assets/images/jennifer.jpg" alt="jennifer">
+      <img src="${shuffledArrsForRender[numOfCard].img}" alt="${shuffledArrsForRender[numOfCard].name}">
     </div>
     <div class="popup__content">
-      <h2 class="title">Jennifer</h2>
-      <h3 class="subtitle">Dog - Labrador</h3>
-      <p>Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.</p>
+      <h2 class="title">${shuffledArrsForRender[numOfCard].name}</h2>
+      <h3 class="subtitle">${shuffledArrsForRender[numOfCard].breed}</h3>
+      <p>${shuffledArrsForRender[numOfCard].description}</p>
       <ul>
-        <li class="popup__item">Age:</li>
-        <li class="popup__item">Inoculations:</li>
-        <li class="popup__item">Diseases:</li>
-        <li class="popup__item">Parasites:</li>
+        <li class="popup__item"><b>Age: </b>${shuffledArrsForRender[numOfCard].age}</li>
+        <li class="popup__item"><b>Inoculations: </b>${shuffledArrsForRender[numOfCard].inoculations}</li>
+        <li class="popup__item"><b>Diseases: </b>${shuffledArrsForRender[numOfCard].diseases}</li>
+        <li class="popup__item"><b>Parasites: </b>${shuffledArrsForRender[numOfCard].parasites}</li>
       </ul>
     </div>
   </div>`
+  popupWrapper = document.querySelector(".popup__wrapper");
+}
+
+function closePopup() {
+  popupWrapper.remove();
+  body.classList.remove("noscroll");
 }
 
 

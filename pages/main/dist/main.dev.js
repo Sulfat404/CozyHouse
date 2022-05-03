@@ -14,7 +14,7 @@ var btnRigth_Step = document.querySelector(".btn-circle__right");
 var btnLeft_Step = document.querySelector(".btn-circle__left"); //Для поп-апа
 
 var setOfCards;
-var popup;
+var popupWrapper;
 burger.addEventListener("click", burgerOpen);
 window.addEventListener("resize", checkWindowSize);
 navBarItems.forEach(function (navBarItem) {
@@ -27,11 +27,12 @@ var shuffledArrs;
 var cards;
 var pages;
 var btnStep = 1;
+var shuffledArrsForRender;
 
 function initCards() {
   cards = checkWindowSizeForGallary();
   shuffledArrs = createPseudorandomArr(cards);
-  var shuffledArrsForRender = shuffledArrs.slice(0, cards);
+  shuffledArrsForRender = shuffledArrs.slice(0, cards);
   generateCard(shuffledArrsForRender);
 }
 
@@ -116,25 +117,50 @@ function generateCard(shuffledArrsForRender) {
 
 function moveGallaryOneStep() {
   initCards();
-}
+} // popup
 
-function closePopup() {
-  body.classList.remove("noscroll");
-  popup.remove();
-}
+
+var numOfCard; // Обработчик event для событий клика кнопок и появления popup
 
 document.addEventListener("click", function (e) {
   var petsName = e.target.closest('.card');
-  console.log(petsName.id);
+  var btnName = e.target.closest(".btn-circle_pMain");
 
-  for (var i = 0; i < setOfCards.length; i++) {
-    if (petsName.id === setOfCards.id[i]) {
-      renderPopup(e, i);
+  if (petsName === null) {
+    if (btnName !== null) {
+      initCards();
+      return;
     }
-  }
-}); // popup
 
-function renderPopup(e, i) {
+    return;
+  }
+
+  numOfCard = 0;
+
+  while (numOfCard < shuffledArrsForRender.length) {
+    if (petsName.id === shuffledArrsForRender[numOfCard].name) {
+      renderPopup();
+      break;
+    }
+
+    numOfCard++;
+  }
+});
+document.addEventListener("click", function (e) {
+  var name = e.target;
+
+  if (name.id === 'popupWrapper' || name.id === "btnPopupClose") {
+    closePopup();
+  }
+});
+
+function renderPopup() {
   body.classList.add("noscroll");
-  body.innerHTML += "    <div class=\"popup__wrapper\">\n  <div class=\"popup\">\n    <div class=\"btnClose__wrapper\">\n      <svg width=\"62\" height=\"62\" class=\"popup__btnClose\">\n        <use xlink:href=\"../../assets/icons/svgSprie.svg#popupBtn\"></use>\n      </svg>\n    </div>\n    <div class=\"popup__img\">\n      <img src=\"../../assets/images/jennifer.jpg\" alt=\"jennifer\">\n    </div>\n    <div class=\"popup__content\">\n      <h2 class=\"title\">Jennifer</h2>\n      <h3 class=\"subtitle\">Dog - Labrador</h3>\n      <p>Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.</p>\n      <ul>\n        <li class=\"popup__item\">Age:</li>\n        <li class=\"popup__item\">Inoculations:</li>\n        <li class=\"popup__item\">Diseases:</li>\n        <li class=\"popup__item\">Parasites:</li>\n      </ul>\n    </div>\n  </div>";
+  body.innerHTML += "    <div id=\"popupWrapper\" class=\"popup__wrapper\">\n  <div class=\"popup\">\n    <div id=\"btnPopupClose\" class=\"btnClose__wrapper\">\n      <svg id=\"btnPopupClose\" width=\"52\" height=\"52\" class=\"popup__btnClose\">\n        <use id=\"btnPopupClose\" xlink:href=\"../../assets/icons/svgSprie.svg#popupBtn\"></use>\n      </svg>\n    </div>\n    <div class=\"popup__img\">\n      <img src=\"".concat(shuffledArrsForRender[numOfCard].img, "\" alt=\"").concat(shuffledArrsForRender[numOfCard].name, "\">\n    </div>\n    <div class=\"popup__content\">\n      <h2 class=\"title\">").concat(shuffledArrsForRender[numOfCard].name, "</h2>\n      <h3 class=\"subtitle\">").concat(shuffledArrsForRender[numOfCard].breed, "</h3>\n      <p>").concat(shuffledArrsForRender[numOfCard].description, "</p>\n      <ul>\n        <li class=\"popup__item\"><b>Age: </b>").concat(shuffledArrsForRender[numOfCard].age, "</li>\n        <li class=\"popup__item\"><b>Inoculations: </b>").concat(shuffledArrsForRender[numOfCard].inoculations, "</li>\n        <li class=\"popup__item\"><b>Diseases: </b>").concat(shuffledArrsForRender[numOfCard].diseases, "</li>\n        <li class=\"popup__item\"><b>Parasites: </b>").concat(shuffledArrsForRender[numOfCard].parasites, "</li>\n      </ul>\n    </div>\n  </div>");
+  popupWrapper = document.querySelector(".popup__wrapper");
+}
+
+function closePopup() {
+  popupWrapper.remove();
+  body.classList.remove("noscroll");
 }

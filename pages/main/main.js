@@ -1,36 +1,54 @@
 import arrOfPets from "../../assets/data/pets.js";
 
-const burger = document.querySelector(".burger__wrapper-sticks");
-const header = document.querySelector(".header");
-const navBar = document.querySelector(".navbar__list");
-const navBarItems = document.querySelectorAll(".navbar__item");
-let body = document.querySelector(".body")
+let arrOfOpenElem;
+let burger = document.querySelector(".burger__wrapper-sticks");
+let header = document.querySelector(".header");
+let navBar = document.querySelector(".navbar__list");
 
 // buttons
 const btnRigth_Step = document.querySelector(".btn-circle__right");
 const btnLeft_Step = document.querySelector(".btn-circle__left");
 
 //Для поп-апа
-let setOfCards; 
+let setOfCards;
 let popupWrapper;
+let numOfCard;
 
-
-
-burger.addEventListener("click", burgerOpen);
 window.addEventListener("resize", checkWindowSize);
-navBarItems.forEach((navBarItem) => {
-  navBarItem.addEventListener("click", burgerClose);
+navBar.addEventListener("click", function (event) {
+  if (event.target.closest(".navbar__item")) {
+    burgerClose();
+  }
 });
 btnRigth_Step.addEventListener("click", moveGallaryOneStep);
 btnLeft_Step.addEventListener("click", moveGallaryOneStep);
-
+document.addEventListener("click", (e) => {
+  if (e.target.id === "popupWrapper" || e.target.id === "btnPopupClose") {
+    return closePopup();
+  }
+  if (e.target.closest(".card")) {
+    while (numOfCard < shuffledArrsForRender.length) {
+      if (
+        e.target.closest(".card").id === shuffledArrsForRender[numOfCard].name
+      ) {
+        return renderPopup();
+      }
+      numOfCard++;
+    }
+  }
+  if (e.target.closest(".burger__wrapper-sticks")) {
+    return burgerOpen();
+  }
+  if (e.target.closest(".btn-circle_pMain")) {
+    return initCards();
+  }
+  numOfCard = 0;
+});
 
 // Cards begin
 let shuffledArrs;
 let cards;
-let pages;
-let btnStep = 1;
-let shuffledArrsForRender
+let shuffledArrsForRender;
 
 function initCards() {
   cards = checkWindowSizeForGallary();
@@ -41,40 +59,36 @@ function initCards() {
 
 initCards();
 
-if (burger.classList.contains("header-open")) {
-  let windowInnerWidth = document.documentElement.clientWidth;
-  if (windowInnerWidth > 768) {
-    burgerClose();
-  }
-}
-
 function burgerOpen() {
   if (burger.classList.contains("header-open")) {
     return burgerClose();
   }
-  body.classList.add("noscroll");
+  document.body.classList.add("noscroll");
+  burger = document.querySelector(".burger__wrapper-sticks");
+  header = document.querySelector(".header");
+  navBar = document.querySelector(".navbar__list");
   burger.classList.add("header-open");
   navBar.classList.add("header-open");
   header.classList.add("header-open");
+  let arrOfOpenElem = document.querySelectorAll(".header-open");
 }
 
 function burgerClose() {
-  let arrOfOpenElem = document.querySelectorAll(".header-open");
+  arrOfOpenElem = document.querySelectorAll(".header-open");
   arrOfOpenElem.forEach((elem) => {
     elem.classList.remove("header-open");
-    
   });
-  body.classList.remove("noscroll");
-
+  document.body.classList.remove("noscroll");
 }
 
-function checkWindowSize() {
-  let windowInnerWidth = document.documentElement.clientWidth;
-  if (windowInnerWidth > 768) {
+function checkWindowSize(event) {
+  if (
+    event.currentTarget.innerWidth > 768 &&
+    burger.classList.contains("header-open")
+  ) {
     burgerClose();
   }
 }
-
 
 // gallary
 function checkWindowSizeForGallary() {
@@ -84,7 +98,8 @@ function checkWindowSizeForGallary() {
     cards = 3;
   } else if (768 <= windowInnerWidth && windowInnerWidth <= 1280) {
     cards = 2;
-  } else { // 768 > windowInnerWidth
+  } else {
+    // 768 > windowInnerWidth
     cards = 1;
   }
   return cards;
@@ -94,72 +109,42 @@ function createPseudorandomArr(cards) {
   // Берет массив объектов из data.js, рандомизирует и конкатинирует в один псевдослучайный массив
   let shuffledArrs = [];
   let shuffleArr = arrOfPets
-  .map((i) => [Math.random(), i])
-  .sort()
-  .map((i) => i[1]);
+    .map((i) => [Math.random(), i])
+    .sort()
+    .map((i) => i[1]);
   shuffledArrs = shuffledArrs.concat(shuffleArr.slice(0, cards));
   return shuffledArrs;
 }
-
 
 function generateCard(shuffledArrsForRender) {
   const gallaryItems = document.querySelector(".gallary__items_pMain");
   gallaryItems.innerHTML = "";
   for (let card = 1; card <= shuffledArrsForRender.length; card++) {
-    gallaryItems.innerHTML += `<div class="card card_pMain" id="${shuffledArrsForRender[card - 1].name}">
+    gallaryItems.innerHTML += `<div class="card card_pMain" id="${
+      shuffledArrsForRender[card - 1].name
+    }">
               <div>
-                  <img src=${shuffledArrsForRender[card - 1].img} alt="${shuffledArrsForRender[card-1].name}">
+                  <img src=${shuffledArrsForRender[card - 1].img} alt="${
+      shuffledArrsForRender[card - 1].name
+    }">
               </div>
-              <p class="title card__subtitle">${shuffledArrsForRender[card - 1].name}</p>
+              <p class="title card__subtitle">${
+                shuffledArrsForRender[card - 1].name
+              }</p>
               <button class="btn__style-transparent">Learn more</button>
           </div>`;
   }
   setOfCards = document.querySelectorAll(".card_pMain");
 }
 
-
 function moveGallaryOneStep() {
-  initCards()
+  initCards();
 }
 
-// popup
-
-let numOfCard;
-
-// Обработчик event для событий клика кнопок и появления popup
-document.addEventListener("click", (e) => {
-  let petsName = e.target.closest('.card');
-  let btnName = e.target.closest(".btn-circle_pMain")
-  if (petsName === null) {
-    if (btnName !== null) {
-      initCards();
-      return;
-    }
-    return;
-  }
-  numOfCard = 0;
-  while(numOfCard < shuffledArrsForRender.length) {
-    if(petsName.id === shuffledArrsForRender[numOfCard].name) {
-      renderPopup();
-      break;
-    }
-    numOfCard++
-  }
-})
-
-
-
-document.addEventListener("click", (e) => {
-  let name = e.target;
-  if(name.id === 'popupWrapper' || name.id === "btnPopupClose") {
-    closePopup();
-  }
-})
-
-
+// Проверка на закрытие popup
 function renderPopup() {
-  body.classList.add("noscroll");
-  body.innerHTML += `    <div id="popupWrapper" class="popup__wrapper">
+  document.body.classList.add("noscroll");
+  document.body.innerHTML += `    <div id="popupWrapper" class="popup__wrapper">
   <div class="popup">
     <div id="btnPopupClose" class="btnClose__wrapper">
       <svg id="btnPopupClose" width="52" height="52" class="popup__btnClose">
@@ -180,16 +165,11 @@ function renderPopup() {
         <li class="popup__item"><b>Parasites: </b>${shuffledArrsForRender[numOfCard].parasites}</li>
       </ul>
     </div>
-  </div>`
+  </div>`;
   popupWrapper = document.querySelector(".popup__wrapper");
 }
 
 function closePopup() {
   popupWrapper.remove();
-  body.classList.remove("noscroll");
+  document.body.classList.remove("noscroll");
 }
-
-
-
-
-

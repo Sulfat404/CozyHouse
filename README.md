@@ -1,2 +1,2 @@
-[Link on main page Cozy House](https://sulfat404.github.io/Cozy-House/pages/main/main.html)
+[Link on main page Cozy House](https://sulfat404.github.io/Cozy-House/pages/main/main.html)  
 Technologies: HTML, SCSS, JS, BEM class names

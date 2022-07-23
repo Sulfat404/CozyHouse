@@ -23,14 +23,13 @@ navBar.addEventListener("click", function (event) {
 btnRigth_Step.addEventListener("click", moveGallaryOneStep);
 btnLeft_Step.addEventListener("click", moveGallaryOneStep);
 document.addEventListener("click", (e) => {
+  numOfCard = 0;
   if (e.target.id === "popupWrapper" || e.target.id === "btnPopupClose") {
     return closePopup();
   }
   if (e.target.closest(".card")) {
     while (numOfCard < shuffledArrsForRender.length) {
-      if (
-        e.target.closest(".card").id === shuffledArrsForRender[numOfCard].name
-      ) {
+      if (e.target.closest(".card").id === shuffledArrsForRender[numOfCard].name) {
         return renderPopup();
       }
       numOfCard++;
@@ -42,7 +41,6 @@ document.addEventListener("click", (e) => {
   if (e.target.closest(".btn-circle_pMain")) {
     return initCards();
   }
-  numOfCard = 0;
 });
 
 // Cards begin
@@ -124,9 +122,7 @@ function generateCard(shuffledArrsForRender) {
       shuffledArrsForRender[card - 1].name
     }">
               <div>
-                  <img src=${shuffledArrsForRender[card - 1].img} alt="${
-      shuffledArrsForRender[card - 1].name
-    }">
+                  <img src=${shuffledArrsForRender[card - 1].img} alt="${shuffledArrsForRender[card - 1].name}">
               </div>
               <p class="title card__subtitle">${
                 shuffledArrsForRender[card - 1].name
